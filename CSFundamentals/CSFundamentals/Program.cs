@@ -12,7 +12,7 @@ namespace CSFundamentals
 
             //Arrays
             //DesignerPdfViewer.DesignerPdfViewerWorker();
-            AVeryBigSum.AVeryBigSumWorker();
+            //AVeryBigSum.AVeryBigSumWorker();
         }
     }
 }
