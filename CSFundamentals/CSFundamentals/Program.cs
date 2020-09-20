@@ -1,4 +1,5 @@
 ﻿using System;
+using CSFundamentals.Concepts.ArraysStrings;
 
 namespace CSFundamentals
 {
@@ -6,7 +7,12 @@ namespace CSFundamentals
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Oh, Yeah! That "Hello World!
+            //Console.WriteLine("Hello World!");
+
+            //Arrays
+            //DesignerPdfViewer.DesignerPdfViewerWorker();
+            AVeryBigSum.AVeryBigSumWorker();
         }
     }
 }

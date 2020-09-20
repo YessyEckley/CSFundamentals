@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Concepts\" />
+    <Folder Include="Concepts\Strings\" />
+    <Folder Include="Concepts\ArraysStrings\" />
+    <Folder Include="Concepts\Lists\" />
+  </ItemGroup>
 </Project>
