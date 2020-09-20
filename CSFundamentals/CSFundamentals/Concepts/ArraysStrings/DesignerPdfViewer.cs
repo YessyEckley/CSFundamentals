@@ -29,6 +29,8 @@ namespace CSFundamentals.Concepts.ArraysStrings
                 // In this case we will not need the alphabet variable
                 // Both solutions are not perfect are they brute for a solution for a possibly more complex problem but it works
                 // var letterIndex = ((int)letter) - 97;
+                // Another Option
+                // var letterIndex2 = letter - 'a';
 
                 if (h[letterIndex] < 1)
                 {
