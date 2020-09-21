@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using CSFundamentals.Concepts.ArraysStrings;
 
 namespace CSFundamentals
@@ -13,6 +14,7 @@ namespace CSFundamentals
             //Arrays
             //DesignerPdfViewer.DesignerPdfViewerWorker();
             //AVeryBigSum.AVeryBigSumWorker();
+            //LeftRotation.LeftRotationWorker();
         }
     }
 }
