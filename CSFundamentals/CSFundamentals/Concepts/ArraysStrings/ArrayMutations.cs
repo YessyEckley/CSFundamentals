@@ -27,9 +27,11 @@ namespace CSFundamentals.Concepts.ArraysStrings
 
         public static T[] InsertAt(T[] a, int index, T aValue)
         {
+            // TODO: Maybe we can simplyfy this
+
             var result = new T[a.Count() + 1];
             var constIndex = 0;
-
+            
             for(var i = 0; i < a.Count() + 1; i++)
             {
                 if(i == index)
