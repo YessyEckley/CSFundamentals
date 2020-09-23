@@ -12,6 +12,8 @@ namespace CSFundamentals.Concepts.ArraysStrings
          * 
          * MSDN Documentation on ref keyword
          * https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/ref
+         * It is important to note that refering to the new value location doesn't happen until the method is returned
+         * In this case the reference location will update after the Swap function is returned
          * 
          * https://www.w3resource.com/csharp-exercises/recursion/csharp-recursion-exercise-11.php
          * https://www.chadgolden.com/blog/finding-all-the-permutations-of-an-array-in-c-sharp

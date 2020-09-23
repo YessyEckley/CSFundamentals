@@ -8,7 +8,11 @@ namespace CSFundamentals
     {
         static void Main(string[] args)
         {
-            // We will not write here to proof po
+            // We will not write here to proof concepts, we will use test for that
+
+            // Coding challenges
+            // https://www.hackerrank.com/challenges/diagonal-difference/problem
+            // https://www.hackerrank.com/challenges/utopian-tree/problem
         }
     }
 }
