@@ -1,9 +1,9 @@
 ﻿using System;
 namespace CSFundamentals.Concepts.ArraysStrings
 {
-    public class MoveZerosToEndOnePass
+    public class MoveZerosInOnePass
     {
-        public MoveZerosToEndOnePass()
+        public MoveZerosInOnePass()
         {
         }
 
