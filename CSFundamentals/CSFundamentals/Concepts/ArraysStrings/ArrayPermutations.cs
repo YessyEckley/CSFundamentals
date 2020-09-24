@@ -70,7 +70,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             {
                 var newArray = new T[a.Length];
 
-                Array.Copy(a, newArray, a.Length);
+                newArray = (T[])a.Clone();
 
                 returnList.Add(newArray);
             }

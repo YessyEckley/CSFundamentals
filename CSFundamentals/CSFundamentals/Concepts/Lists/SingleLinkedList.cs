@@ -3,13 +3,13 @@ namespace CSFundamentals.Concepts.Lists
 {
     public class SingleLinkedList<T>
     {
-        public Node<T> Head { get; set; }
+        public SingleLinkedListNode<T> Head { get; set; }
 
         public void Append(T data)
         {
             if(Head == null)
             {
-                Head = new Node<T>(data);
+                Head = new SingleLinkedListNode<T>(data);
 
                 return;
             }
@@ -21,12 +21,12 @@ namespace CSFundamentals.Concepts.Lists
                 currentNode = currentNode.NextNode;
             }
 
-            currentNode.NextNode = new Node<T>(data);
+            currentNode.NextNode = new SingleLinkedListNode<T>(data);
         }
 
         public void Prepend(T data)
         {
-            var newHead = new Node<T>(data);
+            var newHead = new SingleLinkedListNode<T>(data);
 
             newHead.NextNode = Head;
 
@@ -61,13 +61,13 @@ namespace CSFundamentals.Concepts.Lists
         }
     }
 
-    public class Node<T>
+    public class SingleLinkedListNode<T>
     {
         public T Data { get; set; }
 
-        public Node<T> NextNode { get; set; }
+        public SingleLinkedListNode<T> NextNode { get; set; }
 
-        public Node(T data)
+        public SingleLinkedListNode(T data)
         {
             Data = data;
         }

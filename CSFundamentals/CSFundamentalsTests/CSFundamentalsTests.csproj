@@ -16,6 +16,7 @@
   <ItemGroup>
     <Folder Include="Concepts\" />
     <Folder Include="Concepts\ArrayStrings\" />
+    <Folder Include="Concepts\Lists\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CSFundamentals\CSFundamentals.csproj" />
