@@ -64,38 +64,60 @@ namespace CSFundamentals.Concepts.Lists
 
         public static SinglyLinkedListNode InsertNodeAtPosition(SinglyLinkedListNode head, int data, int position)
         {
+            // Option #1
             if (head == null)
             {
-                return new SinglyLinkedListNode(data); ;
+                return new SinglyLinkedListNode(data);
             }
 
             var current = head;
-            var newHead = new SinglyLinkedListNode(head.data);
-            var newTail = newHead;
             var index = 1;
 
-            current = current.next;
-
-            while (current != null)
+            while (current.next != null && index < position)
             {
-                if (index == position)
-                {
-                    var newInsertNode = new SinglyLinkedListNode(data);
-
-                    newInsertNode.next = current;
-
-                    current = newInsertNode;
-                }
-
-                var tempNode = new SinglyLinkedListNode(current.data);
-                newTail.next = tempNode;
-                newTail = tempNode;
                 current = current.next;
-
                 index++;
             }
 
-            return newHead;
+            var newNode = new SinglyLinkedListNode(data);
+            newNode.next = current.next;
+            current.next = newNode;
+
+            return head;
+
+            // Option #2
+            //if (head == null)
+            //{
+            //    return new SinglyLinkedListNode(data); ;
+            //}
+
+            //var current = head;
+            //var newHead = new SinglyLinkedListNode(head.data);
+            //var newTail = newHead;
+            //var index = 1;
+
+            //current = current.next;
+
+            //while (current != null)
+            //{
+            //    if (index == position)
+            //    {
+            //        var newInsertNode = new SinglyLinkedListNode(data);
+
+            //        newInsertNode.next = current;
+
+            //        current = newInsertNode;
+            //    }
+
+            //    var tempNode = new SinglyLinkedListNode(current.data);
+            //    newTail.next = tempNode;
+            //    newTail = tempNode;
+            //    current = current.next;
+
+            //    index++;
+            //}
+
+            //return newHead;
         }
 
         public static void NodeInsertAtLinkedListWorker()

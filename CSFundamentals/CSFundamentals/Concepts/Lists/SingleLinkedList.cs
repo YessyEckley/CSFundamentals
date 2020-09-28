@@ -43,7 +43,8 @@ namespace CSFundamentals.Concepts.Lists
 
         public void InsertAt(T data, int insertIndex)
         {
-            if (Head == null)
+            // Option #1
+            if(Head == null)
             {
                 Head = new SingleLinkedListNode<T>(data);
 
@@ -51,31 +52,52 @@ namespace CSFundamentals.Concepts.Lists
             }
 
             var current = Head;
-            var newHead = new SingleLinkedListNode<T>(Head.Data);
-            var newTail = newHead;
-
-            current = current.NextNode;
-
             var index = 1;
 
-            while (current != null)
+            while(current.NextNode != null && index < insertIndex)
             {
-                if(index == insertIndex)
-                {
-                    var newNode = new SingleLinkedListNode<T>(data);
-
-                    newNode.NextNode = current;
-
-                    current = newNode;
-                }
-
-                var tempNode = new SingleLinkedListNode<T>(current.Data);
-                newTail.NextNode = tempNode; // This will append to the next node of the tail
-                newTail = tempNode; // Now that the old tail's next node has been assigned, we move the reference of the tail to the new node
                 current = current.NextNode;
-
                 index++;
             }
+
+            var newInsertNode = new SingleLinkedListNode<T>(data);
+            newInsertNode.NextNode = current.NextNode;
+            current.NextNode = newInsertNode;
+
+            // Option #2
+            //if (Head == null)
+            //{
+            //    Head = new SingleLinkedListNode<T>(data);
+
+            //    return;
+            //}
+
+            //var current = Head;
+            //var newHead = new SingleLinkedListNode<T>(Head.Data);
+            //var newTail = newHead;
+
+            //current = current.NextNode;
+
+            //var index = 1;
+
+            //while (current != null)
+            //{
+            //    if (index == insertIndex)
+            //    {
+            //        var newNode = new SingleLinkedListNode<T>(data);
+
+            //        newNode.NextNode = current;
+
+            //        current = newNode;
+            //    }
+
+            //    var tempNode = new SingleLinkedListNode<T>(current.Data);
+            //    newTail.NextNode = tempNode; // This will append to the next node of the tail
+            //    newTail = tempNode; // Now that the old tail's next node has been assigned, we move the reference of the tail to the new node
+            //    current = current.NextNode;
+
+            //    index++;
+            //}
         }
 
         public void Delete(T data)
