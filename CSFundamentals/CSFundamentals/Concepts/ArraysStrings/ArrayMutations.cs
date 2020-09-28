@@ -5,12 +5,19 @@ namespace CSFundamentals.Concepts.ArraysStrings
 {
     public class ArrayMutations<T>
     {
+        // TODO: create another version without the Array.Copy
         public static T[] AddToStart(T[] a, T aValue)
         {
             var result = new T[a.Count() + 1];
 
-            Array.Copy(a, 0, result, 1, a.Count());
             result[0] = aValue;
+
+            //Array.Copy(a, 0, result, 1, a.Count());
+            // The other alternative
+            for(var i = 1; i <= a.Count(); i++)
+            {
+                result[i] = a[i - 1];
+            }
 
             return result;
         }
@@ -19,8 +26,14 @@ namespace CSFundamentals.Concepts.ArraysStrings
         {
             var result = new T[a.Count() + 1];
 
-            Array.Copy(a, 0, result, 0, a.Count());
             result[a.Count()] = aValue;
+
+            //Array.Copy(a, 0, result, 0, a.Count());
+            // The other way
+            for(var i = 0; i < a.Count(); i++)
+            {
+                result[i] = a[i];
+            }
 
             return result;
         }
