@@ -23,13 +23,11 @@ namespace CSFundamentals.Concepts.Lists
 
         public void Append(T data)
         {
-            // TODO: not done
-
             var newTailNode = new DoubleLinkedListNode<T>(data, null, null);
 
             if(Head == null)
             {
-                Head = newTailNode;
+                Head = Tail = newTailNode;
 
                 return;
             }
@@ -42,7 +40,9 @@ namespace CSFundamentals.Concepts.Lists
             }
 
             current.NextNode = newTailNode;
+
             newTailNode.PreviousNode = current;
+
             Tail = newTailNode;
         }
 
@@ -60,10 +60,30 @@ namespace CSFundamentals.Concepts.Lists
 
         public void Insert(T data, int location)
         {
+            if(Head == null)
+            {
+                Head = Tail = new DoubleLinkedListNode<T>(data, null, null);
+
+                return;
+            }
+
+            var current = Head;
+            var index = 1;
+
+            while(current.NextNode != null && index < location)
+            {
+                current = current.NextNode;
+
+                index++;
+            }
+
+            var newInsertNode = new DoubleLinkedListNode<T>(data, current.NextNode, current);
+            current.NextNode = newInsertNode;
         }
 
         public void Delete(T data)
         {
+            // TODO; Need to finish
         }
     }
 

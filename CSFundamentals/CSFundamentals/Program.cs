@@ -8,6 +8,19 @@ namespace CSFundamentals
     {
         static void Main(string[] args)
         {
+            // Resources
+            // https://leetcode.com/
+            // https://www.hackerrank.com/
+            // https://www.dailycodingproblem.com/
+            // https://coderbyte.com/
+            // https://edabit.com/challenges
+            // https://www.codechef.com/
+            // https://www.codewars.com/
+            // https://www.freecodecamp.org/learn/
+            // https://www.topcoder.com/
+            // https://codeforces.com/
+            // Google Search Coading challenge sites
+
             // We will not write here to proof concepts, we will use test for that
 
             //Stacks and Queues

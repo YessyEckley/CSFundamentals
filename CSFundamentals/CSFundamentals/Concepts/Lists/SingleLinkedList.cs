@@ -60,9 +60,13 @@ namespace CSFundamentals.Concepts.Lists
                 index++;
             }
 
-            var newInsertNode = new SingleLinkedListNode<T>(data);
-            newInsertNode.NextNode = current.NextNode;
-            current.NextNode = newInsertNode;
+            var newInsertNode = new SingleLinkedListNode<T>(data); // We create the new node with the data that was passed
+            newInsertNode.NextNode = current.NextNode; // We assigin the newInsetNode.NextNode to the next node from the previous node
+
+            // Another way
+            //var newInsertNode = new SingleLinkedListNode<T>(data) { NextNode = current.NextNode };
+
+            current.NextNode = newInsertNode; // Now the current next node can be assign the new node
 
             // Option #2
             //if (Head == null)
@@ -143,8 +147,13 @@ namespace CSFundamentals.Concepts.Lists
             }
         }
 
-        public void Copy()
+        public SingleLinkedListNode<T> Copy()
         {
+            var newSingleLinkedList = new SingleLinkedList<T>();
+
+            // TODO: Needs to be completed
+
+            return newSingleLinkedList;
         }
     }
 
