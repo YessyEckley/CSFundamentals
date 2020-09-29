@@ -27,7 +27,13 @@ namespace CSFundamentals.Concepts.StackQueues
         }
 
         public int Pop()
-        { }
+        {
+            var data = Top.Data;
+
+            Top = Top.Next;
+
+            return data;
+        }
 
 
         public class Node
