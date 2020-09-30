@@ -22,6 +22,11 @@ namespace CSFundamentals
             // It uses the the same type of logic as the previous exercise, find the sum of two numbers, but in this instance we are searching two Arrays of integers
             // https://www.youtube.com/watch?v=GBuHSRDGZBY
 
+            // Excercise #3
+            // This is a good exercise: https://www.youtube.com/watch?v=PIeiiceWe_w
+
+            // This is one with a complicated algorithm. It's unlikely to be asked but it's a great watch: https://www.youtube.com/watch?v=qz9tKlF431k
+
             // Resources
             // https://leetcode.com/
             // https://www.hackerrank.com/
@@ -50,9 +55,11 @@ namespace CSFundamentals
             //https://www.hackerrank.com/challenges/queue-using-two-stacks/problem
 
             // Coding challenges
+            // https://www.hackerrank.com/dashboard
             // https://www.hackerrank.com/challenges/diagonal-difference/problem
             // https://www.hackerrank.com/challenges/utopian-tree/problem
             // https://www.hackerrank.com/challenges/delete-a-node-from-a-linked-list/problem
+            // https://www.hackerrank.com/challenges/find-the-merge-point-of-two-joined-linked-lists/problem
         }
     }
 }

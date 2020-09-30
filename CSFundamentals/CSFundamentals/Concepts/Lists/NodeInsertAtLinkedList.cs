@@ -109,9 +109,8 @@ namespace CSFundamentals.Concepts.Lists
             //        current = newInsertNode;
             //    }
 
-            //    var tempNode = new SinglyLinkedListNode(current.data);
-            //    newTail.next = tempNode;
-            //    newTail = tempNode;
+            //    newTail.next = new SinglyLinkedListNode(current.data);
+            //    newTail = newTail.next;
             //    current = current.next;
 
             //    index++;
