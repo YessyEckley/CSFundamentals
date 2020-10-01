@@ -130,6 +130,8 @@ namespace CSFundamentals.Concepts.StackQueues
             var t = Convert.ToInt32(Console.ReadLine());
             var enqueueStack = new QueueingStack();
             var dequeueStack = new QueueingStack();
+            int intData;
+            int poppedInt;
 
             for (int tItr = 0; tItr < t; tItr++)
             {
@@ -138,34 +140,39 @@ namespace CSFundamentals.Concepts.StackQueues
                 switch(s[0])
                 {
                     case '1':
-                        var intData = int.Parse(s.Split(' ').Last());
+                        intData = int.Parse(s.Split(' ').Last());
+                        while (!dequeueStack.IsEmpty()) // This can to be after coming with a brute force solution but it's still not optimized
+                        {
+                            poppedInt = dequeueStack.Pop();
+                            enqueueStack.Push(poppedInt);
+                        }
                         enqueueStack.Push(intData);
                         break;
                     case '2':
                         while(!enqueueStack.IsEmpty())
                         {
-                            var poppedInt = enqueueStack.Pop();
+                            poppedInt = enqueueStack.Pop();
                             dequeueStack.Push(poppedInt);
                         }
                         dequeueStack.Pop();
-                        while (!dequeueStack.IsEmpty())
-                        {
-                            var poppedInt = dequeueStack.Pop();
-                            enqueueStack.Push(poppedInt);
-                        }
+                        //while (!dequeueStack.IsEmpty()) // This was a Brute Force approach
+                        //{
+                        //    poppedInt = dequeueStack.Pop();
+                        //    enqueueStack.Push(poppedInt);
+                        //}
                         break;
                     case '3':
                         while (!enqueueStack.IsEmpty())
                         {
-                            var poppedInt = enqueueStack.Pop();
+                            poppedInt = enqueueStack.Pop();
                             dequeueStack.Push(poppedInt);
                         }
                         dequeueStack.Print();
-                        while (!dequeueStack.IsEmpty())
-                        {
-                            var poppedInt = dequeueStack.Pop();
-                            enqueueStack.Push(poppedInt);
-                        }
+                        //while (!dequeueStack.IsEmpty()) // This was a Brute Force approach
+                        //{
+                        //    poppedInt = dequeueStack.Pop();
+                        //    enqueueStack.Push(poppedInt);
+                        //}
                         break;
                     default:
                         throw new Exception("Invalid Input!");
