@@ -18,6 +18,7 @@
     <Folder Include="Concepts\ArrayStrings\" />
     <Folder Include="Concepts\Lists\" />
     <Folder Include="Concepts\StackQueues\" />
+    <Folder Include="Concepts\Algorithms\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CSFundamentals\CSFundamentals.csproj" />

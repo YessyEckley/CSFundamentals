@@ -7,9 +7,9 @@
 
   <ItemGroup>
     <Folder Include="Concepts\" />
-    <Folder Include="Concepts\Strings\" />
     <Folder Include="Concepts\ArraysStrings\" />
     <Folder Include="Concepts\Lists\" />
     <Folder Include="Concepts\StackQueues\" />
+    <Folder Include="Concepts\Algorithms\" />
   </ItemGroup>
 </Project>
