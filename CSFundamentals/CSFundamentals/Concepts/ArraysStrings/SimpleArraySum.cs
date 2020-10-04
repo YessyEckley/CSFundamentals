@@ -23,7 +23,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
 
         public static int SimpleArraySumUsingArraySum(int[] ar)
         {
-            return ar.Sum(); // But this is using Linq
+            return ar.Sum(); // This is the simple straight forwards approach but is using Linq
         }
     }
 }
