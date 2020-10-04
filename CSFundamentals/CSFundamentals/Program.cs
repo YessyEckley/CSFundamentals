@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using CSFundamentals.Concepts.ArraysStrings;
+using CSFundamentals.Concepts.HashTables;
 
 namespace CSFundamentals
 {
