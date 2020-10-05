@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace CSFundamentals.Concepts.StackQueues
 {
@@ -143,6 +145,94 @@ namespace CSFundamentals.Concepts.StackQueues
             }
 
             return stack.IsEmpty() ? "YES" : "NO";
+        }
+
+        public static string IsBalancedUsingStack(string s)
+        {
+            /*
+             * In this example we will use stacks to find our solution
+             * Sample Data
+             * {(([])[])[]}
+             * {(([])[])[]]}
+             * {(([])[])[]}[]
+             * Sample Output
+             * YES
+             * NO
+             * YES
+             * 
+             * Explanation:
+             * The string that gets passed has the folloing characters -> '{', '}', '(', ')', '[', ']' <-
+             *      -> the string can be null
+             *          -> "YES" is balanced???
+             * ??? Need a flag for the return, but then again we can just return the string and save having to create a flag
+             * We need to go through each Char of the string and insert into a stack (LIFO)
+             *      -> We are going to need a loop to go through each chracter of the string
+             *      -> If the character is an opening bracket, -> '{', '(', '[' <-, push into the stack
+             *      -> If the character is a closing bracket, -> '}', ')', ']' <-, then peek into the stack with the matching opening bracket, -> '{', '(', '[' <-
+             *         (a match of the closing bracket should immediately correspond to the top of the stack)
+             *          -> If the peek matches the opening pair of the closing bracket
+             *              -> Pop the value out to give way to the next char in line
+             *              -> We keep looping through the characters
+             *          -> If the peek doesn't match the pair of the closing bracket
+             *             *** Room for improvement: we need to check that the stack is not empty when also evaluating 
+             *              -> then return "NO" and exit the function -> the brackets are not balanced
+             *      *** Room for improvement: I also forgot toevaluate the end return. We always want to make sure we evaluate that the stack is empty to make sure it is completely balanced.
+             *      If there are still nodes left in the stack, then the string of brackets is not balanced
+             */
+
+            if (string.IsNullOrWhiteSpace(s))
+            {
+                return "YES";
+            }
+
+            // Another way to not do too much work, because we are working with pairs, we can check that we are dealing with an even numbered string
+            // If not then exit early. Chances are pretty high that we are dealing with an unbalanced bracket string, as there will always be one character left in the stack
+            if ((s.Length % 2) != 0)
+            {
+                return "NO";
+            }
+
+            var stack = new Stack<char>();
+
+            for (var i = 0; i < s.Length; i++) // O(n) time and O(n) space
+            {
+                switch (s[i])
+                {
+                    case '{':
+                    case '(':
+                    case '[':
+                        stack.Push(s[i]);
+                        break;
+                    case '}':
+                        if (stack.Count == 0 || stack.Peek() != '{')
+                        {
+                            return "NO";
+                        }
+
+                        stack.Pop();
+                        break;
+                    case ')':
+                        if (stack.Count == 0 || stack.Peek() != '(')
+                        {
+                            return "NO";
+                        }
+
+                        stack.Pop();
+                        break;
+                    case ']':
+                        if (stack.Count == 0 || stack.Peek() != '[')
+                        {
+                            return "NO";
+                        }
+
+                        stack.Pop();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return stack.Count == 0 ? "YES" : "NO";
         }
 
         public static string IsBalancedNoneStackSymetrical(string s)

@@ -1,13 +1,14 @@
 ﻿using System;
+
 namespace CSFundamentals.Concepts.StackQueues
 {
-    public class Stack
+    public class MyStack
     {
         // LIFO -> Last In First Out
 
         public Node Top { get; set; } // Remove from the top
 
-        public bool Empty()
+        public bool IsEmpty()
         {
             return Top == null;
         }

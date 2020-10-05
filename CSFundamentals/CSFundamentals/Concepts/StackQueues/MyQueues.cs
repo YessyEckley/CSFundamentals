@@ -1,7 +1,7 @@
 ﻿using System;
 namespace CSFundamentals.Concepts.StackQueues
 {
-    public class Queues
+    public class MyQueues
     {
         // FIFO -> First In First Out
 
