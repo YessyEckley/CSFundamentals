@@ -5,6 +5,8 @@ namespace CSFundamentals.Concepts.StackQueues
     public class MyStack
     {
         // LIFO -> Last In First Out
+        // C# has a Stack class that we can use
+        // This is for practice
 
         public Node Top { get; set; } // Remove from the top
 

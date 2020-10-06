@@ -6,6 +6,7 @@ namespace CSFundamentals.Concepts.Lists
         /*
          * More info: https://www.c-sharpcorner.com/article/linked-list-implementation-in-c-sharp/
          *            https://www.c-sharpcorner.com/article/doubly-linked-list-and-circular-linked-list-in-c-sharp/
+         *            https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.linkedlist-1?view=netcore-3.1
          */
 
         public DoubleLinkedListNode<T> Head { get; set; }

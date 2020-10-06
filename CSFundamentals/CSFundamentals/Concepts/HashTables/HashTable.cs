@@ -11,6 +11,7 @@ namespace CSFundamentals.Concepts.HashTables
          * This is from the book 'Problem Solving in Data Structures & Algorithms using C#' by Hemant Jain
          * 
          * The main purpose of this practice is to understand how Hashtables work
+         * There is a class on C#, the class Hashtable,  that handles this logic
          */
         public int TableSize { get; set; }
 

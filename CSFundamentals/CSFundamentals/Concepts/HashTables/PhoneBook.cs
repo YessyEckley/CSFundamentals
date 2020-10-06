@@ -26,7 +26,7 @@ namespace CSFundamentals.Concepts.HashTables
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Entry already exist!");
+                Console.WriteLine($"Entry already exist! {ex.Message}");
             }
 
             // Iterating through the Hashtable

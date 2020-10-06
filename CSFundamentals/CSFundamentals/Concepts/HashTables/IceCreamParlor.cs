@@ -84,6 +84,7 @@ namespace CSFundamentals.Concepts.HashTables
          *                          -> we can salvage this that if the upper and lower are the same then we can do some resetting but so far this approach is nt working
          */
 
+        // The following method passes all the test on the website -> approach #1
         public static int[] IceCreamParlorCalculateEmbededForLoop(int m, int[] arr)
         {
             // This is a brute force approach just sticking with the array
@@ -108,6 +109,7 @@ namespace CSFundamentals.Concepts.HashTables
             return returnArray;
         }
 
+        // The following method passes all the test on the website -> approach #2
         public static int[] IceCreamParlorCalculateHashtableEmbededForLoop(int m, int[] arr)
         {
             // This was my original try that I wasn't happy about
@@ -139,229 +141,8 @@ namespace CSFundamentals.Concepts.HashTables
             return returnArray;
         }
 
-        // The hackerrank.com problem has a test case that will not pass with this logic
-        // It is the test case with a lot of data
-        public static int[] IceCreamParlorCalculateHashtableLinkListSearch(int m, int[] arr)
-        {
-            // In my original solution I went with the option of using the index as my key
-            // But there is the option of using the price as the key and store the index as the value
-            // Many suggest to use Linked List to prevent coalitions
-            //  -> A good game plan is to make that value always the same type, it is easier to deal with the same type than mixed types
-            //  -> Add to the linked list
-
-            // Reason why i don't assign a lenght to the Hashtable is because in C# these types tend to resize once they reach their size limit
-            var hashtable = new Hashtable();
-            LinkedList<int> indexList;
-            var firstIndex = 0;
-            var secondIndex = 0;
-
-            for (int i = 1; i <= arr.Length; i++)
-            {
-                // we can easily get a colision, as we can see on the example Trip #2
-                // so we need to verify that the keys do not colide, you get a constraint exception for trying to add an existing key
-                // and add to a liked list, which is found in the System.Collections.Generic
-                // Practice C#'s LinkedLists, I don't know how to use them
-
-                if (hashtable.ContainsKey(arr[i - 1]))
-                {
-                    indexList = (LinkedList<int>)hashtable[arr[i - 1]];
-
-                    indexList.AddLast(i);
-
-                    hashtable[arr[i - 1]] = indexList;
-                }
-                else
-                {
-                    indexList = new LinkedList<int>();
-                    indexList.AddLast(i);
-
-                    hashtable.Add(arr[i - 1], indexList);
-                }
-            }
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                // Now we can search by the remaining price
-                // m = price1 + price2
-                // m - price1 = price2
-                var lookupPrice = m - arr[i];
-
-                if (hashtable.ContainsKey(lookupPrice))
-                {
-                    firstIndex = i + 1;
-                    indexList = (LinkedList<int>)hashtable[lookupPrice];
-                    secondIndex = indexList.First.Value;
-
-                    if (firstIndex == secondIndex && indexList.Count > 1)
-                    {
-                        secondIndex = indexList.Find(firstIndex).Next.Value;
-                    }
-
-                    return new int[] { firstIndex, secondIndex};
-                }
-            }
-
-            return new int[2];
-        }
-
-        // This example uses Dictionary
-        // We can avoid having to cast
-        public static int[] IceCreamParlorCalculateDictionaryLinkListSearch(int m, int[] arr)
-        {
-            // In my original solution I went with the option of using the index as my key
-            // But there is the option of using the price as the key and store the index as the value
-            // Many suggest to use Linked List to prevent coalitions
-            //  -> A good game plan is to make that value always the same type, it is easier to deal with the same type than mixed types
-            //  -> Add to the linked list
-
-            // Reason why i don't assign a lenght to the Hashtable is because in C# these types tend to resize once they reach their size limit
-            var dictionary = new Dictionary<int, List<int>>();
-            List<int> indexList;
-            var firstIndex = 0;
-            var secondIndex = 0;
-
-            for (int i = 1; i <= arr.Length; i++)
-            {
-                // we can easily get a colision, as we can see on the example Trip #2
-                // so we need to verify that the keys do not colide, you get a constraint exception for trying to add an existing key
-                // and add to a liked list, which is found in the System.Collections.Generic
-                // Practice C#'s LinkedLists, I don't know how to use them
-
-                if (dictionary.ContainsKey(arr[i - 1]))
-                {
-                    indexList = dictionary[arr[i - 1]];
-
-                    indexList.Add(i);
-
-                    dictionary[arr[i - 1]] = indexList;
-                }
-                else
-                {
-                    indexList = new List<int>();
-                    indexList.Add(i);
-
-                    dictionary.Add(arr[i - 1], indexList);
-                }
-            }
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                // Now we can search by the remaining price
-                // m = price1 + price2
-                // m - price1 = price2
-                var lookupPrice = m - arr[i];
-
-                if (dictionary.ContainsKey(lookupPrice))
-                {
-                    firstIndex = i + 1;
-                    indexList = dictionary[lookupPrice];
-                    secondIndex = indexList[0];
-
-                    if (firstIndex == secondIndex && indexList.Count > 1)
-                    {
-                        secondIndex = indexList[1];
-                    }
-
-                    return new int[] { firstIndex, secondIndex };
-                }
-            }
-
-            return new int[2];
-        }
-
-        public static int[] IceCreamParlorCalculateHashtableListSearch(int m, int[] arr)
-        {
-            // In my original solution I went with the option of using the index as my key
-            // But there is the option of using the price as the key and store the index as the value
-            // Many suggest to use Linked List to prevent coalitions
-            //  -> A good game plan is to make that value always the same type, it is easier to deal with the same type than mixed types
-            //  -> Add to the linked list
-
-            // Reason why i don't assign a lenght to the Hashtable is because in C# these types tend to resize once they reach their size limit
-            var hashtable = new Hashtable();
-            List<int> indexList;
-            var firstIndex = 0;
-            var secondIndex = 0;
-
-            for (int i = 1; i <= arr.Length; i++)
-            {
-                // we can easily get a colision, as we can see on the example Trip #2
-                // so we need to verify that the keys do not colide, you get a constraint exception for trying to add an existing key
-                // and add to a liked list, which is found in the System.Collections.Generic
-                // Practice C#'s LinkedLists, I don't know how to use them
-
-                if (hashtable.ContainsKey(arr[i - 1]))
-                {
-                    indexList = (List<int>)hashtable[arr[i - 1]];
-
-                    indexList.Add(i);
-
-                    hashtable[arr[i - 1]] = indexList;
-                }
-                else
-                {
-                    indexList = new List<int>(new int[] { i });
-
-                    hashtable.Add(arr[i - 1], indexList);
-                }
-            }
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                // Now we can search by the remaining price
-                var lookupPrice = m - arr[i];
-
-                if (hashtable.ContainsKey(lookupPrice))
-                {
-                    firstIndex = i + 1;
-                    indexList = (List<int>)hashtable[lookupPrice];
-                    secondIndex = indexList[0];
-
-                    if (firstIndex == secondIndex)
-                    {
-                        secondIndex = indexList[1];
-                    }
-
-                    return new int[] { firstIndex, secondIndex };
-                }
-            }
-
-            return new int[2];
-        }
-
-        // https://www.youtube.com/watch?v=7sEHjHef2zo
-        // This solution uses the explanation given in this video
-        // Basically we eliminate one of the loops and insert the array element that was ebing evaluate into the Hashtable or dictionary
-        // We have to remember that the key/value pair will be key=(int)price and value=index in the array
-        // becuase we will be saving that way and array indexes are 0-based, we have to add one to conver it to 1-base indexes
-        public static int[] IceCreamParlorCalculateHashtableListSearch2(int m, int[] arr)
-        {
-            // For some reason this is worst
-            // Two test from Hackerrank do not pass
-            // The example is done in Java and it passes the tests -> I tested the code
-            var hashtable = new Hashtable();
-            var result = new int[2];
-            var lookupPrice = 0;
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                lookupPrice = m - arr[i];
-
-                if (hashtable.ContainsKey(lookupPrice))
-                {
-                    result[0] = 1 + (int)hashtable[lookupPrice];
-                    result[1] = i + 1;
-
-                    return result;
-                }
-
-                hashtable.Add(arr[i], i);
-            }
-
-            return result;
-        }
-
-        public static int[] IceCreamParlorCalculateHashtableListSearch3(int m, int[] arr)
+        // The following method passes all the test on the website -> approach #3
+        public static int[] IceCreamParlorCalculateDictionaryListSearchApproach1(int m, int[] arr)
         {
             var dictionary = new Dictionary<int, int>();
             var result = new int[2];
@@ -389,7 +170,7 @@ namespace CSFundamentals.Concepts.HashTables
                 // For more information:
                 // https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2.add?view=netcore-3.1
                 // https://docs.microsoft.com/en-us/dotnet/api/system.collections.hashtable?view=netcore-3.1
-                if (!dictionary.ContainsKey(currentPrice)) 
+                if (!dictionary.ContainsKey(currentPrice))
                 {
                     dictionary.Add(currentPrice, i);
                 }
@@ -398,7 +179,8 @@ namespace CSFundamentals.Concepts.HashTables
             return result;
         }
 
-        public static int[] IceCreamParlorCalculateHashtableListSearch4(int m, int[] arr)
+        // The following method passes all the test on the website - approach #4
+        public static int[] IceCreamParlorCalculateDictionaryListSearchApproach2(int m, int[] arr)
         {
             var dictionary = new Dictionary<int, List<int>>();
             var result = new int[2];
@@ -433,6 +215,12 @@ namespace CSFundamentals.Concepts.HashTables
 
             return result;
         }
+
+        // TODO: We can create and approach using this video: https://www.youtube.com/watch?v=Ifwf3DBN1sc
+        // We can also create a dictionary with all of the values, then get the key/value pair for the lookupPrice, and compare the indexes
+        // If the indexes match then go to the next record of the key/value pair to get a different index, if there is no other record then continue to another lookup
+        // IMPORTANT: We need to make sure we don't select the same record we are trying to loop through -> Maybe compare if the prices are the same
+        // Then, make sure we order the indexies
 
         public static void IceCreamParlorWorker()
         {
