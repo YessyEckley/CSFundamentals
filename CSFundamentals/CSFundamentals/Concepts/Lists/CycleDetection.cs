@@ -134,7 +134,9 @@ namespace CSFundamentals.Concepts.Lists
             //        return true;
             //    }
 
-            //    hashSet.Add(current);
+            // In C# we need to be careful about adding elements to any collection
+            // It's always best practice that we verify before we insert
+            //    hashSet.Add(current); 
 
             //    current = current.next;
             //}

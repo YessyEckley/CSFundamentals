@@ -142,5 +142,15 @@ namespace CSFundamentals.Concepts.HashTables
 
             return "Colorful";
         }
+
+        public void ColorfulNumbersWorker()
+        {
+            // This is for quick testing
+            Console.WriteLine($"Result: {ColorfulNumbers.IsColorfulNumbers(0)}");
+            Console.WriteLine();
+            Console.WriteLine($"Result: {ColorfulNumbers.IsColorfulNumbers(3245)}");
+            Console.WriteLine();
+            Console.WriteLine($"Result: {ColorfulNumbers.IsColorfulNumbers(326)}");
+        }
     }
 }

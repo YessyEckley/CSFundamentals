@@ -9,12 +9,25 @@ namespace CSFundamentals
     {
         static void Main(string[] args)
         {
-            // For unit testing
-            //Console.WriteLine($"Result: {ColorfulNumbers.IsColorfulNumbers(0)}");
-            //Console.WriteLine();
-            //Console.WriteLine($"Result: {ColorfulNumbers.IsColorfulNumbers(3245)}");
-            //Console.WriteLine();
-            //Console.WriteLine($"Result: {ColorfulNumbers.IsColorfulNumbers(326)}");
+            /*
+             * Top 10 Algorithms:
+             * 
+             * https://www.youtube.com/watch?v=r1MXwyiGi_U
+             * https://www.youtube.com/watch?v=zHczhZn-z30
+             * 
+             *  -> Depth first search -> stack
+             *  -> Breadth first search -> queue
+             *  -> Matching Parenthesis -> stacks is best
+             *  -> Use Hash tables -> searches, Matrix, or multidimentional arrays (keep track of something or a value - caching)
+             *  -> Variable/Pointers manipulation -> pointers that travel an array parrallel or at different speeds -> longest palondromic (word that reads the same fowards are backwards) substring in a string
+             *  -> Reversing a linked list -> determine if there are cycles and duplicates too
+             *  -> Sorting fundamentals -> understand the concepts O(n log n)
+             *  -> Recursions -> indicator for good problem solving technique
+             *  -> Construct custom data structures -> suffix tree-like data structure -> object oriented programming and encapsulation
+             *  -> Binary Search -> sorted list where you mid-jump to find a solution O(log n) -> Quick Search
+             */
+
+            var temp = new StringPractice();
         }
     }
 }

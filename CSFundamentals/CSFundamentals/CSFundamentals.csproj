@@ -12,5 +12,6 @@
     <Folder Include="Concepts\StackQueues\" />
     <Folder Include="Concepts\Algorithms\" />
     <Folder Include="Concepts\HashTables\" />
+    <Folder Include="Concepts\Sorts\" />
   </ItemGroup>
 </Project>

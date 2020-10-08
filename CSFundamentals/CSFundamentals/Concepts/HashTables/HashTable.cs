@@ -2,6 +2,7 @@
 
 namespace CSFundamentals.Concepts.HashTables
 {
+    // TODO: This is a practice from a book on algorithms
     public class HashTable
     {
         /*

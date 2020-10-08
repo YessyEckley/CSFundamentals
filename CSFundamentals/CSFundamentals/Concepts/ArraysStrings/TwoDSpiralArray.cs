@@ -55,8 +55,50 @@ namespace CSFundamentals.Concepts.ArraysStrings
          * [9, 10, 11, 12]
          * Output:
          * [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
+         * 
+         * 
+         * Vizualization
+         *    TopLeft      TopRight
+         *       ____ ____ ____
+         *      | >> | >> | >> |
+         *      |____|____|____|
+         *      |  ^ |  > |  V |
+         *      |____|____|____|
+         *      | << | << |  V |
+         *      |____|____|____|
+         *      
+         *   BottomLeft    BottomRight
+         * 
+         * Strategy
+         *  -> View this exercise as traversing the outer part of the box and then reducing, or bringing in, the walls of the box
+         *  -> Determine the size to the map, in this case it is quadratic n^2, but in in other cases you can get 2 numbers for the size then it will be n * m
+         *  -> In the case of coming up with a simple array 
+         *   
          */
-        public TwoDSpiralArray()
+
+        // TODO: COMPLETE EXERCISE
+        public static int[][] MatrixSpiral(int n)
+        {
+            var matrixSize = n * n; // Or var matrixSize = Math.Pow(n, 2);
+            var counter = 0; // we will need a counter to compare against the matrix size
+            var returnMatrix = new int[n][];
+            var topLeft = 0;
+
+            while (counter < matrixSize)
+            {
+                // we will insert the numbers in order on the first array
+            }
+
+            return returnMatrix;
+        }
+
+        public static int[] SpiralArray(int[][] matrix)
+
+        {
+            return null;
+        }
+
+        public void TwoDSpiralArrayWorker()
         {
         }
     }
