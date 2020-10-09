@@ -22,9 +22,11 @@ namespace CSFundamentals
              *  -> Variable/Pointers manipulation -> pointers that travel an array parrallel or at different speeds -> longest palondromic (word that reads the same fowards are backwards) substring in a string
              *  -> Reversing a linked list -> determine if there are cycles and duplicates too
              *  -> Sorting fundamentals -> understand the concepts O(n log n)
+             *      -> Quick Search
              *  -> Recursions -> indicator for good problem solving technique
              *  -> Construct custom data structures -> suffix tree-like data structure -> object oriented programming and encapsulation
-             *  -> Binary Search -> sorted list where you mid-jump to find a solution O(log n) -> Quick Search
+             *  -> Binary Search -> sorted list where you mid-jump to find a solution O(log n) 
+             *  
              */
 
             var temp = new StringPractice();

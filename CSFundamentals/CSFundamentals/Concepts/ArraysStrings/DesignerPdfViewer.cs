@@ -10,7 +10,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          * Link to the problem: https://www.hackerrank.com/challenges/designer-pdf-viewer/problem
          */
 
-        // Complete the designerPdfViewer function below.
+        // Approach #1
         public static int DesignerPdfViewerLogic(int[] h, string word)
         {
             if (word.Count() > 10)
@@ -25,12 +25,38 @@ namespace CSFundamentals.Concepts.ArraysStrings
             {
                 var letterIndex = alphabet.IndexOf(letter);
 
-                // I noticed another solution that uses the ascii dex - 97 as a way to find the index
-                // In this case we will not need the alphabet variable
-                // Both solutions are not perfect are they brute for a solution for a possibly more complex problem but it works
-                // var letterIndex = ((int)letter) - 97;
-                // Another Option
-                // var letterIndex2 = letter - 'a';
+                if (h[letterIndex] < 1)
+                {
+                    h[letterIndex] = 1;
+                }
+
+                if (h[letterIndex] > 7)
+                {
+                    h[letterIndex] = 7;
+                }
+
+                if (topHeight < h[letterIndex])
+                {
+                    topHeight = h[letterIndex];
+                }
+            }
+
+            return word.Count() * topHeight;
+        }
+
+        // Approach #2
+        public static int DesignerPdfViewerLogic2(int[] h, string word)
+        {
+            if (word.Count() > 10)
+            {
+                return 0;
+            }
+
+            var topHeight = 1;
+
+            foreach (var letter in word)
+            {
+                var letterIndex = letter - 'a';
 
                 if (h[letterIndex] < 1)
                 {
