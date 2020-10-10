@@ -3,6 +3,8 @@ namespace CSFundamentals.Concepts.Sorts
 {
     public class QuickSort
     {
+        // QuickSort and MergeSort look very similar
+
         public static void Sort<T>(T[] array) where T : IComparable
         {
             Sort(array, 0, array.Length - 1);
@@ -22,8 +24,8 @@ namespace CSFundamentals.Concepts.Sorts
 
         private static int Partition<T>(T[] array, int lowerIndex, int upperIndex) where T : IComparable
         {
-            var i = lowerIndex;
-            var j = upperIndex;
+            var lower = lowerIndex;
+            var upper = upperIndex;
 
             var pivot = array[lowerIndex];
             // or
@@ -31,25 +33,60 @@ namespace CSFundamentals.Concepts.Sorts
 
             do // Hoare partition scheme
             {
-                while (array[i].CompareTo(pivot) < 0)
+                while (array[lower].CompareTo(pivot) < 0)
                 {
-                    i++;
+                    lower++;
                 }
 
-                while (array[j].CompareTo(pivot) > 0)
+                while (array[upper].CompareTo(pivot) > 0)
                 {
-                    j--;
+                    upper--;
                 }
 
-                if (i >= j)
+                if (lower >= upper)
                 {
                     break;
                 }
 
-                Swap(array, i, j);
-            } while (i <= j);
+                Swap(array, lower, upper);
+            } while (lower <= upper);
 
-            return j;
+            return upper;
+        }
+
+        private static void QuickSortUtil<T>(T[] array, int lowerIndex, int upperIndex) where T : IComparable
+        {
+            if (upperIndex <= lowerIndex)
+            {
+                return;
+            }
+
+            var start = lowerIndex;
+            var stop = upperIndex;
+            var pivot = array[lowerIndex];
+
+            while(lowerIndex < upperIndex)
+            {
+                while (array[lowerIndex].CompareTo(pivot) < 0)
+                {
+                    lowerIndex++;
+                }
+
+                while (array[upperIndex].CompareTo(pivot) > 0)
+                {
+                    upperIndex--;
+                }
+
+                if (lowerIndex < upperIndex)
+                {
+                    Swap(array, upperIndex, lowerIndex);
+                }
+            }
+
+            Swap(array, upperIndex, start);
+
+            QuickSortUtil(array, start, upperIndex - 1);
+            QuickSortUtil(array, upperIndex + 1, stop);
         }
 
         public static void Swap<T>(T[] array, int first, int second)

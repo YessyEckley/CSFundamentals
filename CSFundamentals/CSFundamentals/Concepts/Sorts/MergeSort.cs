@@ -1,6 +1,9 @@
 ﻿using System;
 namespace CSFundamentals.Concepts.Sorts
 {
+    // MergeSort and QuickSort look very similar
+    // See page 138 of the Book Problem Solving in Data Structure & Algorithms Using C#
+
     public class MergeSort
     {
         public MergeSort()
@@ -59,6 +62,23 @@ namespace CSFundamentals.Concepts.Sorts
             Array.Copy(array, rightIndex, tempArray, index, rightEnd - rightIndex + 1);
 
             Array.Copy(tempArray, leftStart, array, leftStart, size);
+        }
+
+        public void Display()
+        {
+            var integerValues = new int[] { -11, 12, -42, 0, 1, 90, 68, 6, -9 };
+            MergeSort.Sort(integerValues);
+            Console.WriteLine(string.Join(" | ", integerValues));
+
+            //var stringValues = new string[] { "Mary", "Marcin", "Ann", "James", "George", "Nicole" };
+            //MergeSort.Sort<string>(stringValues);
+            //Console.WriteLine(string.Join(" | ", stringValues));
+
+            //MergeSort.Sort2<int>(integerValues);
+            //Console.WriteLine(string.Join(" | ", integerValues));
+
+            //MergeSort.Sort2<string>(stringValues);
+            //Console.WriteLine(string.Join(" | ", stringValues));
         }
     }
 }
