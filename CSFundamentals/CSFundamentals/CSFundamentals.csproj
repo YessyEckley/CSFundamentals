@@ -13,5 +13,6 @@
     <Folder Include="Concepts\Algorithms\" />
     <Folder Include="Concepts\HashTables\" />
     <Folder Include="Concepts\Sorts\" />
+    <Folder Include="Concepts\TreesHeapsGraphs\" />
   </ItemGroup>
 </Project>
