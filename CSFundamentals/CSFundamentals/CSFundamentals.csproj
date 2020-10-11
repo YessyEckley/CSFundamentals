@@ -14,5 +14,7 @@
     <Folder Include="Concepts\HashTables\" />
     <Folder Include="Concepts\Sorts\" />
     <Folder Include="Concepts\TreesHeapsGraphs\" />
+    <Folder Include="Concepts\BfsDfs\" />
+    <Folder Include="Concepts\Recursions\" />
   </ItemGroup>
 </Project>

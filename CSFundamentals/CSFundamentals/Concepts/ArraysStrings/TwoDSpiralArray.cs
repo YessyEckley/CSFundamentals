@@ -58,7 +58,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          * 
          * 
          * Vizualization
-         *    TopLeft      TopRight
+         *    Top             Right
          *       ____ ____ ____
          *      | >> | >> | >> |
          *      |____|____|____|
@@ -67,7 +67,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          *      | << | << |  V |
          *      |____|____|____|
          *      
-         *   BottomLeft    BottomRight
+         *   Left            Bottom
          * 
          * Strategy
          *  -> View this exercise as traversing the outer part of the box and then reducing, or bringing in, the walls of the box
@@ -76,30 +76,134 @@ namespace CSFundamentals.Concepts.ArraysStrings
          *   
          */
 
-        // TODO: COMPLETE EXERCISE
         public static int[][] MatrixSpiral(int n)
         {
+            if (n <= 0) // If we don't have a valid number lets exit
+            {
+                return null;
+            }
+
+            // In C# if we have a jagged array we need to instantiate each row
+            var returnMatrix = new int[n][];
+            for (int i = 0; i < n; i++)
+            {
+                returnMatrix[i] = new int[n];
+            }
+
             var matrixSize = n * n; // Or var matrixSize = Math.Pow(n, 2);
             var counter = 0; // we will need a counter to compare against the matrix size
-            var returnMatrix = new int[n][];
-            var topLeft = 0;
+            var top = 0;
+            var left = 0;
+            var bottom= n - 1;
+            var right = n - 1;
 
             while (counter < matrixSize)
             {
-                // we will insert the numbers in order on the first array
+                // insert the numbers in order while bring in the box
+                //  -> insert the first row
+                for (int i = left; i <= right && counter < matrixSize; i++) // Think of these values as to the direction you need to traverse
+                {
+                    returnMatrix[top][i] = counter + 1;
+                    counter++;
+                }
+                top++;
+                //  -> insert values on the last column
+                for (int i = top; i <= bottom && counter < matrixSize; i++)
+                {
+                    returnMatrix[i][right] = counter + 1;
+                    counter++;
+                }
+                right--;
+                //  -> insert on last row
+                for (int i = right; i >= left && counter < matrixSize; i--)
+                {
+                    returnMatrix[bottom][i] = counter + 1;
+                    counter++;
+                }
+                bottom--;
+                //  -> insert on first column
+                for (int i = bottom; i >= top && counter < matrixSize; i--)
+                {
+                    returnMatrix[i][left] = counter + 1;
+                    counter++;
+                }
+                left++; 
             }
 
             return returnMatrix;
         }
 
         public static int[] SpiralArray(int[][] matrix)
-
         {
-            return null;
+            // This is assuming that we have the same amount of columns for each row
+            var size = matrix.Length * matrix[0].Length;
+            var returnIntArray = new int[size];
+
+            if (matrix == null || matrix.Length <= 0)
+            {
+                return returnIntArray;
+            }
+
+            var top = 0;
+            var bottom = matrix.Length - 1;
+            var left = 0;
+            var right = matrix[0].Length - 1;
+            var counter = 0;
+
+            while (counter < size)
+            {
+                for (int i = left; i <= right; i++) // Once again, we can view this as the direction we are going to be filling up
+                {
+                    returnIntArray[counter] = matrix[top][i]; // This is our mapping, we are looking at the top row
+                    counter++;
+                }
+                top++;
+                for (int i = top; i <= bottom; i++)
+                {
+                    returnIntArray[counter] = matrix[i][right]; // This is our mapping, we are looking at the right column
+                    counter++;
+                }
+                right--;
+                for (int i = right; i >= left; i--)
+                {
+                    returnIntArray[counter] = matrix[bottom][i]; // This is our mapping, we are looking at the bottom row
+                    counter++;
+                }
+                bottom--;
+                for (int i = bottom; i >= top; i++)
+                {
+                    returnIntArray[counter] = matrix[i][left]; // This is our mapping, we are looking at the left column
+                    counter++;
+                }
+                left++;
+            }
+
+            return returnIntArray;
         }
 
-        public void TwoDSpiralArrayWorker()
+        public static void TwoDSpiralArrayWorker()
         {
+            var resultMatrix = MatrixSpiral(3);
+            Console.WriteLine("Input: 3");
+            Console.WriteLine("Output:");
+            foreach (var array in resultMatrix)
+            {
+                Console.WriteLine($"[ {string.Join(", ", array)} ]");
+            }
+            resultMatrix = MatrixSpiral(4);
+            Console.WriteLine("Input: 4");
+            Console.WriteLine("Output:");
+            foreach (var array in resultMatrix)
+            {
+                Console.WriteLine($"[ {string.Join(", ", array)} ]");
+            }
+            resultMatrix = MatrixSpiral(8);
+            Console.WriteLine("Input: 8");
+            Console.WriteLine("Output:");
+            foreach (var array in resultMatrix)
+            {
+                Console.WriteLine($"[ {string.Join(", ", array)} ]");
+            }
         }
     }
 }
