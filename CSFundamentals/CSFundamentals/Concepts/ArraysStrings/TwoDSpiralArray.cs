@@ -76,6 +76,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          *   
          */
 
+        // These examples are using Jagged Arrays -> here is more info: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/jagged-arrays
         public static int[][] MatrixSpiral(int n)
         {
             if (n <= 0) // If we don't have a valid number lets exit
