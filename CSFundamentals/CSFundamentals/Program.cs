@@ -28,8 +28,6 @@ namespace CSFundamentals
              *  -> Binary Search -> sorted list where you mid-jump to find a solution O(log n) 
              *  
              */
-
-            Concepts.ArraysStrings.TwoDSpiralArray.TwoDSpiralArrayWorker();
         }
     }
 }
