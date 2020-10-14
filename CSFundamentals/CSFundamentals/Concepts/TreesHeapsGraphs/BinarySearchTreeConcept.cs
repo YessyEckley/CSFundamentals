@@ -67,7 +67,7 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
 
         public class BinarySearchTree<T> : BinaryTree<T> where T : IComparable
         {
-            public bool Contains(T data) // This can also be done with recursion
+            public bool Contains(T data) // Can this be done recursively? Let's try it.
             {
                 var node = Root;
 
@@ -90,6 +90,33 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
                 }
 
                 return false;
+            }
+
+            public bool ContainsRecursive(T data, BinarySearchTreeNode<T> node)
+            {
+                // By passing the node we can eliminate having to create a node variable
+                // First we need our stopping condition
+                //  -> We have two exits
+                //      -> When we have a null node
+                //      -> When the data matches the node's data
+                if (node == null)
+                {
+                    return false;
+                }
+                if (data.CompareTo(node.Data) == 0)
+                {
+                    return true;
+                }
+
+                // Then we recurse through the nodes to find our comparison
+                if (data.CompareTo(node.Data) < 0)
+                {
+                    return ContainsRecursive(data, node.Left);
+                }
+                else
+                {
+                    return ContainsRecursive(data, node.Right);
+                }
             }
         }
     }
