@@ -72,11 +72,18 @@ namespace CSFundamentals
  * 
  * Good place to get information on Algoriths and Data Structures
  * https://en.wikipedia.org/wiki/Algorithm
+ * https://en.wikipedia.org/wiki/Category:Algorithms
  * https://en.wikipedia.org/wiki/List_of_algorithms
+ * https://en.wikipedia.org/wiki/Category:Sorting_algorithms
+ * https://en.wikipedia.org/wiki/Sorting_algorithm
+ * https://en.wikipedia.org/wiki/Category:Search_algorithms
  * https://en.wikipedia.org/wiki/Computer_science
  * https://en.wikipedia.org/wiki/List_of_data_structures
  * https://en.wikipedia.org/wiki/Time_complexity
  * https://en.wikipedia.org/wiki/Space_complexity
+ * https://en.wikipedia.org/wiki/Data_structure
+ * https://en.wikipedia.org/wiki/Category:Data_structures
+ * https://en.wikipedia.org/wiki/Palindrome
  * 
  * We will not write here to proof concepts, we will use test for that
  * 

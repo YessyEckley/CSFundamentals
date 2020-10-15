@@ -10,6 +10,10 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
          * Binary Search Tree Rules:
          *      -> All of the nodes values to the left of the parent node must be smaller than the value
          *      -> All of the nodes values to the right of the parent node must be greater than the value
+         *      
+         * Here are some helpful links:
+         *      -> https://www.geeksforgeeks.org/binary-search-tree-data-structure/
+         *      -> https://en.wikipedia.org/wiki/Binary_search_tree
          */
 
         public class TreeNode<T>
@@ -117,6 +121,140 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
                 {
                     return ContainsRecursive(data, node.Right);
                 }
+
+                // The best strategy for recursions is to start with your stop condition
+                // Then plan your recursion
+                // and always pass your variables as parameters, as we do not want to possibly overflow the Stack memory
+            }
+
+            public void Add(T data)
+            {
+                var parent = GetParentForNewNode(data);
+                var node = new BinarySearchTreeNode<T>
+                {
+                    Data = data,
+                    Parent = parent,
+                };
+
+                if (parent == null)
+                {
+                    Root = node;
+                }
+                else if (data.CompareTo(parent.Data) < 0)
+                {
+                    parent.Left = node;
+                }
+                else
+                {
+                    parent.Right = node;
+                }
+
+                Count++;
+
+            }
+
+            private BinarySearchTreeNode<T> GetParentForNewNode(T data)
+            {
+                var current = Root;
+                BinarySearchTreeNode<T> parent = null;
+
+                while (current != null)
+                {
+                    parent = current;
+                    var result = data.CompareTo(current.Data);
+
+                    if (result == 0)
+                    {
+                        throw new ArgumentException($"The node {data} already exists.");
+                    }
+                    else if (result < 0)
+                    {
+                        current = current.Left;
+                    }
+                    else
+                    {
+                        current = current.Right;
+                    }
+                }
+
+                return parent;
+            }
+
+            public void Remove(T data)
+            {
+                Remove(Root, data);
+            }
+
+            private void Remove(BinarySearchTreeNode<T> node, T data)
+            {
+                if (node == null)
+                {
+                    throw new ArgumentException($"The node {data} does not exists.");
+                }
+                else if (data.CompareTo(node.Data) < 0)
+                {
+                    Remove(node.Left, data);
+                }
+                else if (data.CompareTo(node.Data) > 0)
+                {
+                    Remove(node.Right, data);
+                }
+                else
+                {
+                    if (node.Left == null && node.Right == null)
+                    {
+                        ReplaceInParentNode(node, null);
+                        Count--;
+                    }
+                    else if (node.Right == null)
+                    {
+                        ReplaceInParentNode(node, node.Left);
+                    }
+                    else if (node.Left == null)
+                    {
+                        ReplaceInParentNode(node, node.Right);
+                    }
+                    else
+                    {
+                        var successor = FindMinimunInSubtree(node.Right);
+                        node.Data = successor.Data;
+                        Remove(successor, successor.Data);
+                    }
+                }
+            }
+
+            private void ReplaceInParentNode(BinarySearchTreeNode<T> node, BinarySearchTreeNode<T> newNode)
+            {
+                if (node.Parent != null)
+                {
+                    if (node.Parent.Left == node)
+                    {
+                        node.Parent.Left = newNode;
+                    }
+                    else
+                    {
+                        node.Parent.Right = newNode;
+                    }
+                }
+                else
+                {
+                    Root = newNode;
+                }
+
+                if (newNode != null)
+                {
+                    newNode.Parent = node.Parent;
+                }
+            }
+
+            private BinarySearchTreeNode<T> FindMinimunInSubtree(BinarySearchTreeNode<T> node)
+            {
+                while (node.Left != null)
+                {
+                    node = node.Left;
+                }
+
+                return node;
             }
         }
     }
