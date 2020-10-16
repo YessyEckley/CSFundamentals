@@ -127,6 +127,7 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
                 // and always pass your variables as parameters, as we do not want to possibly overflow the Stack memory
             }
 
+
             public void Add(T data)
             {
                 var parent = GetParentForNewNode(data);
@@ -179,6 +180,7 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
 
                 return parent;
             }
+
 
             public void Remove(T data)
             {
@@ -255,6 +257,57 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
                 }
 
                 return node;
+            }
+
+
+            public void InvertTree(BinarySearchTreeNode<T> root)
+            {
+                if (root == null)
+                {
+                    return;
+                }
+
+                // We need to swap the nodes in order to create 
+                Swap(root);
+
+                // Now we need to recurse to do the same thing to the left and right child nodes
+                InvertTree(root.Left);
+                InvertTree(root.Right);
+            }
+
+            private void Swap(BinarySearchTreeNode<T> node)
+            {
+                var tempLeftNode = node.Left;
+                node.Left = node.Right;
+                node.Right = tempLeftNode;
+            }
+
+
+            public bool ValidateBst(BinarySearchTreeNode<T> root)
+            {
+                // Binary Search Tree Rules: O(n) time and spacial complexity
+                //      -> All of the nodes values to the left of the parent node must be smaller than the value
+                //      -> All of the nodes values to the right of the parent node must be greater than the value
+                // This site offers a really good explanation of validating BST
+                //      -> https://www.geeksforgeeks.org/a-program-to-check-if-a-binary-tree-is-bst-or-not/
+                //      -> https://www.youtube.com/watch?v=Z_-h_mpDmeg
+                //      -> https://en.wikipedia.org/wiki/Binary_search_tree
+                return IsValidBst(root, default(T), default(T));
+            }
+
+            private bool IsValidBst(BinarySearchTreeNode<T> node, T minData, T maxData)
+            {
+                if (node == null)
+                {
+                    return true;
+                }
+                else if (minData != null && node.Data.CompareTo(minData) <= 0 ||
+                    maxData != null && node.Data.CompareTo(maxData) >= 0)
+                {
+                    return false;
+                }
+
+                return IsValidBst(node.Left, minData, node.Data) && IsValidBst(node.Right, node.Data, maxData);
             }
         }
     }
