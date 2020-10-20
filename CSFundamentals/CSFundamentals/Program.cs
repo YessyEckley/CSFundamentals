@@ -9,28 +9,32 @@ namespace CSFundamentals
     {
         static void Main(string[] args)
         {
-            /*
-             * Top 10 Algorithms:
-             * 
-             * https://www.youtube.com/watch?v=r1MXwyiGi_U
-             * https://www.youtube.com/watch?v=zHczhZn-z30
-             * 
-             *  -> Depth first search -> stack
-             *  -> Breadth first search -> queue
-             *  -> Matching Parenthesis -> stacks is best
-             *  -> Use Hash tables -> searches, Matrix, or multidimentional arrays (keep track of something or a value - caching)
-             *  -> Variable/Pointers manipulation -> pointers that travel an array parrallel or at different speeds -> longest palondromic (word that reads the same fowards are backwards) substring in a string
-             *  -> Reversing a linked list -> determine if there are cycles and duplicates too
-             *  -> Sorting fundamentals -> understand the concepts O(n log n)
-             *      -> Quick Search
-             *  -> Recursions -> indicator for good problem solving technique
-             *  -> Construct custom data structures -> suffix tree-like data structure -> object oriented programming and encapsulation
-             *  -> Binary Search -> sorted list where you mid-jump to find a solution O(log n) 
-             *  
-             */
+            //Concepts.Sorts.InsertionSort.Display();
+            Concepts.Sorts.QuicksortTwoHrSorting.QuickSort(new int[] { 5, 8, 1, 3, 7, 9, 2 });
         }
     }
 }
+
+
+/*
+ * Top 10 Algorithms:
+ * 
+ * https://www.youtube.com/watch?v=r1MXwyiGi_U
+ * https://www.youtube.com/watch?v=zHczhZn-z30
+ * 
+ *  -> Depth first search -> stack
+ *  -> Breadth first search -> queue
+ *  -> Matching Parenthesis -> stacks is best
+ *  -> Use Hash tables -> searches, Matrix, or multidimentional arrays (keep track of something or a value - caching)
+ *  -> Variable/Pointers manipulation -> pointers that travel an array parrallel or at different speeds -> longest palondromic (word that reads the same fowards are backwards) substring in a string
+ *  -> Reversing a linked list -> determine if there are cycles and duplicates too
+ *  -> Sorting fundamentals -> understand the concepts O(n log n)
+ *      -> Quick Search
+ *  -> Recursions -> indicator for good problem solving technique
+ *  -> Construct custom data structures -> suffix tree-like data structure -> object oriented programming and encapsulation
+ *  -> Binary Search -> sorted list where you mid-jump to find a solution O(log n) 
+ *  
+ */
 
 /*
  * Information:
@@ -84,6 +88,8 @@ namespace CSFundamentals
  * https://en.wikipedia.org/wiki/Data_structure
  * https://en.wikipedia.org/wiki/Category:Data_structures
  * https://en.wikipedia.org/wiki/Palindrome
+ * https://en.wikipedia.org/wiki/Pseudocode
+ * https://en.wikibooks.org/wiki/Algorithm_Implementation
  * 
  * We will not write here to proof concepts, we will use test for that
  * 

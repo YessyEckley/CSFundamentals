@@ -3,7 +3,11 @@ namespace CSFundamentals.Concepts.StackQueues
 {
     public class MyQueues
     {
-        // FIFO -> First In First Out
+        /*
+         * FIFO -> First In First Out
+         * 
+         * C# Class on Queues: https://docs.microsoft.com/en-us/dotnet/api/system.collections.queue?view=netcore-3.1
+         */
 
         public Node Head { get; set; } // Remove from the begining
 

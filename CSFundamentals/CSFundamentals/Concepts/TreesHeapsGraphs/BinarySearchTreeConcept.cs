@@ -275,6 +275,7 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
                 InvertTree(root.Right);
             }
 
+
             private void Swap(BinarySearchTreeNode<T> node)
             {
                 var tempLeftNode = node.Left;

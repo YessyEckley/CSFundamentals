@@ -56,6 +56,7 @@ namespace CSFundamentals.Concepts.Sorts
 
         private static void QuickSortUtil<T>(T[] array, int lowerIndex, int upperIndex) where T : IComparable
         {
+            // Another interpretation of the Hoare partition scheme
             if (upperIndex <= lowerIndex)
             {
                 return;

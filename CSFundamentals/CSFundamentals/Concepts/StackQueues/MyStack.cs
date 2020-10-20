@@ -4,9 +4,13 @@ namespace CSFundamentals.Concepts.StackQueues
 {
     public class MyStack
     {
-        // LIFO -> Last In First Out
-        // C# has a Stack class that we can use
-        // This is for practice
+        /* 
+         * LIFO -> Last In First Out
+         * C# has a Stack class that we can use
+         * This is for practice
+         * 
+         * C# Stack class: https://docs.microsoft.com/en-us/dotnet/api/system.collections.stack?view=netcore-3.1
+         */
 
         public Node Top { get; set; } // Remove from the top
 
