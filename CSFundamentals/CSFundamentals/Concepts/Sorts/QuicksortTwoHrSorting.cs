@@ -12,6 +12,7 @@ namespace CSFundamentals.Concepts.Sorts
          * 
          * Resource: https://en.wikipedia.org/wiki/Quicksort
          *           https://www.geeksforgeeks.org/quick-sort/
+         *           https://github.com/RyanFehr/HackerRank/blob/master/Algorithms/Sorting/Quicksort%202%20-%20Sorting/Solution.java
          * 
          * Strategy
          *      -> Array of 1 or less are sorted
