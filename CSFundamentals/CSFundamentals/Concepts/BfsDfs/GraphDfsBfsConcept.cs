@@ -6,6 +6,11 @@ namespace CSFundamentals.Concepts.BfsDfs
 {
     /*
      * Information about C# HashSets: https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.hashset-1?view=netcore-3.1
+     * 
+     * More Resources: https://en.wikipedia.org/wiki/Breadth-first_search
+     *                 https://en.wikipedia.org/wiki/Depth-first_search
+     *                 https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/
+     *                 https://www.geeksforgeeks.org/level-order-tree-traversal/
      */
     public class GraphDfsBfsConcept
     {

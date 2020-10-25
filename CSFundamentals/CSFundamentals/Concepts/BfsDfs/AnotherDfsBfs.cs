@@ -6,6 +6,9 @@ namespace CSFundamentals.Concepts.BfsDfs
 {
     public class AnotherDfsBfs
     {
+        /*
+         * Resource: https://www.csharpstar.com/csharp-breadth-first-search/
+         */
         public class Node<T>
         {
             public int Index { get; set; }
@@ -191,8 +194,7 @@ namespace CSFundamentals.Concepts.BfsDfs
             private List<Node<T>> Bfs(Node<T> node)
             {
                 /*
-                 * For more information:
-                 *          https://en.wikipedia.org/wiki/Breadth-first_search
+                 * For more information: https://en.wikipedia.org/wiki/Breadth-first_search
                  */
 
                 var isVisited = new bool[Nodes.Count];

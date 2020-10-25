@@ -43,13 +43,30 @@ namespace CSFundamentals.Concepts.StackQueues
 
         public int Remove()
         {
-            // TODO: Needs validation
+            if (Head == null)
+            {
+                return int.MinValue; // in this case return an invalid number -> chances are it will get ignored
+            }
 
             var data = Head.Data;
 
             Head = Head.Next;
 
             if(Head == null)
+            {
+                Tail = null;
+            }
+
+            return data;
+        }
+
+        public int? Remove2()
+        {
+            var data = Head?.Data; // Or we can return null
+
+            Head = Head?.Next;
+
+            if (Head == null)
             {
                 Tail = null;
             }

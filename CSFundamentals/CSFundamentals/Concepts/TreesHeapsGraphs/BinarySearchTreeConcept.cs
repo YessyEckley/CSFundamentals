@@ -14,6 +14,12 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
          * Here are some helpful links:
          *      -> https://www.geeksforgeeks.org/binary-search-tree-data-structure/
          *      -> https://en.wikipedia.org/wiki/Binary_search_tree
+         *      
+         * -> To better remember these concepts think of the porsition of the root in the order of the nodes
+         *          In-order    Pre-order   Post-order
+         * Root         2           1           3
+         * Left         1           2           1
+         * Right        3           3           2
          */
 
         public class TreeNode<T>
@@ -58,15 +64,50 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
             public BinarySearchTreeNode<T> Root { get; set; }
             public int Count { get; set; }
 
-            // TODO: Try to recreate with recursion
-            public void TraversePreOrder()
-            { }
+            public void TraversePreOrder(BinarySearchTreeNode<T> root, List<T> dataList)
+            {
+                if (root != null)
+                {
+                    // Root
+                    dataList.Add(root.Data);
 
-            public void TraverseInOrder()
-            { }
+                    // Left
+                    TraversePreOrder(root.Left, dataList);
 
-            public void TraversePostOrder()
-            { }
+                    // Right
+                    TraversePreOrder(root.Right, dataList);
+                }
+            }
+
+            public void TraverseInOrder(BinarySearchTreeNode<T> root, List<T> dataList)
+            {
+                if (root != null)
+                {
+                    // Left
+                    TraverseInOrder(root.Left, dataList);
+
+                    // Root
+                    dataList.Add(root.Data);
+
+                    // Right
+                    TraverseInOrder(root.Right, dataList);
+                }
+            }
+
+            public void TraversePostOrder(BinarySearchTreeNode<T> root, List<T> dataList)
+            {
+                if (root != null)
+                {
+                    // Left
+                    TraversePostOrder(root.Left, dataList);
+
+                    // Right
+                    TraversePostOrder(root.Right, dataList);
+
+                    // Root
+                    dataList.Add(root.Data);
+                }
+            }
         }
 
         public class BinarySearchTree<T> : BinaryTree<T> where T : IComparable

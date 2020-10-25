@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace CSFundamentals.Concepts.ArraysStrings
 {
     public class TwoDSpiralArray
@@ -73,10 +74,12 @@ namespace CSFundamentals.Concepts.ArraysStrings
          *  -> View this exercise as traversing the outer part of the box and then reducing, or bringing in, the walls of the box
          *  -> Determine the size to the map, in this case it is quadratic n^2, but in in other cases you can get 2 numbers for the size then it will be n * m
          *  -> In the case of coming up with a simple array 
-         *   
+         * 
+         * Notes:
+         * These examples are using Jagged Arrays -> here is more info: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/jagged-arrays
+         * Important link: https://docs.microsoft.com/en-us/dotnet/api/system.array.length?view=netcore-3.1
          */
 
-        // These examples are using Jagged Arrays -> here is more info: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/arrays/jagged-arrays
         public static int[][] MatrixSpiral(int n)
         {
             if (n <= 0) // If we don't have a valid number lets exit
@@ -137,7 +140,9 @@ namespace CSFundamentals.Concepts.ArraysStrings
         public static int[] SpiralArray(int[][] matrix)
         {
             // This is assuming that we have the same amount of columns for each row
-            var size = matrix.Length * matrix[0].Length;
+            // It's important to note that this will work for jagged arrays but not for multidimentional arrays as Lenght will return the total of all of the elements
+            // For multi-dimentional arrays you have to use a combination of the array Rank and the upper bound for the rank level
+            var size = matrix.Length * matrix[0].Length; 
             var returnIntArray = new int[size];
 
             if (matrix == null || matrix.Length <= 0)
