@@ -23,63 +23,44 @@ namespace CSFundamentals.Concepts.BfsDfs
          *                        https://www.geeksforgeeks.org/hashset-in-c-sharp-with-examples/
          * 
          * IMPOTANT: Debug your code by talking out loud
+         * 
+         * Here is another example on how to do it.
+         * This solution didn't passed all of the test cases
          */
 
-        public static Dictionary<int, Node> NodeDictionary;
+        public static Dictionary<int, List<int>> NodeDictionary;
 
         public const int WEIGTH = 6;
 
-        public class Node
+        private static void BuildDictionary(int[][] edges)
         {
-            public int Data { get; set; }
-            public HashSet<Node> Adjecent { get; set; }
-            public int Weight { get; }
-            public int Level { get; set; }
-
-            public Node(int data)
-            {
-                Data = data;
-                Adjecent = new HashSet<Node>();
-                Weight = 6;
-                Level = -1;
-
-            }
-        }
-
-        public static void BuildGraph(int n, int[][] edges)
-        {
-            NodeDictionary = new Dictionary<int, Node>();
-
-            for (int i = 1; i <= n; i++)
-            {
-                NodeDictionary.Add(i, new Node(i));
-            }
-
-            AddEdges(edges);
-        }
-
-        public static void AddEdges(int[][] edges)
-        {
+            NodeDictionary = new Dictionary<int, List<int>>();
             for (int i = 0; i < edges.Length; i++)
             {
-                if (NodeDictionary.ContainsKey(edges[i][0]))
+                int source = edges[i][0];
+                int destination = edges[i][1];
+                if (!NodeDictionary.ContainsKey(source))
                 {
-                    var vertex = NodeDictionary[edges[i][0]];
-
-                    if (vertex.Level == -1)
+                    NodeDictionary.Add(source, new List<int> { destination });
+                }
+                else
+                {
+                    if (!NodeDictionary[source].Contains(destination))
                     {
-                        vertex.Level = 0;
+                        NodeDictionary[source].Add(destination);
                     }
+                }
 
-                    if (!vertex.Adjecent.Any(x => x.Data == edges[i][1]))
+                if (!NodeDictionary.ContainsKey(destination))
+                {
+                    NodeDictionary.Add(destination, new List<int> { source });
+                }
+                else
+                {
+                    if (!NodeDictionary[destination].Contains(source))
                     {
-                        var newNodeItem = NodeDictionary[edges[i][1]];
-
-                        newNodeItem.Level = vertex.Level + 1;
-
-                        vertex.Adjecent.Add(newNodeItem);
+                        NodeDictionary[destination].Add(source);
                     }
-                    
                 }
             }
         }
@@ -90,7 +71,7 @@ namespace CSFundamentals.Concepts.BfsDfs
             var visitedMinDistance = new Dictionary<int, int>();
             var returnValues = new int[n - 1];
             var returnValuesIndex = 0;
-            BuildGraph(n, edges);
+            BuildDictionary(edges);
 
             queue.Enqueue(s);
             visitedMinDistance.Add(s, 0);
@@ -98,23 +79,22 @@ namespace CSFundamentals.Concepts.BfsDfs
             while (queue.Count > 0)
             {
                 var vertex = queue.Dequeue();
-                var node = NodeDictionary[vertex];
+                var dictionaryEntry = NodeDictionary[vertex];
 
-                if (node != null)
+                if (dictionaryEntry != null)
                 {
-                    //var index = visitedMinDistance.ContainsKey(vertex) ? visitedMinDistance[vertex] : 0;
-                    if (node.Adjecent.Count > 0)
+                    if (dictionaryEntry.Count > 0)
                     {
-                        foreach (var child in node.Adjecent)
+                        foreach (var child in dictionaryEntry)
                         {
-                            if (!visitedMinDistance.ContainsKey(child.Data))
+                            if (!visitedMinDistance.ContainsKey(child))
                             {
-                                queue.Enqueue(child.Data);
-                                visitedMinDistance.Add(child.Data, child.Level);
+                                queue.Enqueue(child);
+                                visitedMinDistance.Add(child, visitedMinDistance[vertex] + 1);
                             }
-                            else if (visitedMinDistance[child.Data] > visitedMinDistance[vertex])
+                            else if (visitedMinDistance[child] > visitedMinDistance[vertex])
                             {
-                                visitedMinDistance.Add(child.Data, child.Level);
+                                visitedMinDistance.Add(child, visitedMinDistance[vertex] + 1);
                             }
                         }
                     }
@@ -125,13 +105,13 @@ namespace CSFundamentals.Concepts.BfsDfs
             {
                 if (i != s)
                 {
-                    if (visitedMinDistance.ContainsKey(i))
+                    if (!visitedMinDistance.ContainsKey(i))
                     {
-                        returnValues[returnValuesIndex] = visitedMinDistance[i] * 6;
+                        returnValues[returnValuesIndex] = -1;
                     }
                     else
                     {
-                        returnValues[returnValuesIndex] = -1;
+                        returnValues[returnValuesIndex] = visitedMinDistance[i] * 6; 
                     }
 
                     returnValuesIndex++;
@@ -206,95 +186,3 @@ namespace CSFundamentals.Concepts.BfsDfs
         }
     }
 }
-
-
-
-/*
-
-This is the Java solution that  works
-import java.io.*;
-import java.util.*;
-
-public class Solution {
-    private static int mN;
-    private static int mM;
-    private static Integer mS;
-    private static Map<Integer, Set<Integer>> mNodeToNeigh;
-
-    public static void main(String[] args) {
-        final Scanner scanner = new Scanner(System.in);
-        int numberTests = scanner.nextInt();
-        while (numberTests > 0) {
-            parseArguments(scanner);
-            computeOutput();
-            numberTests--;
-        }
-    }
-
-    private static void computeOutput() {
-        Queue<Integer> queue = new LinkedList<Integer>();
-        Map<Integer, Integer> visitedMinDis = new HashMap<>();
-        visitedMinDis.put(mS, 0);
-        queue.add(mS);
-
-        while(!queue.isEmpty()) {
-            Integer element = queue.remove();
-
-            if (mNodeToNeigh.get(element) != null) {
-                for(Integer neigh : mNodeToNeigh.get(element)) {
-                    if(!visitedMinDis.containsKey(neigh)) {
-                        queue.add(neigh);
-                        visitedMinDis.put(neigh, visitedMinDis.get(element) + 1);
-                    } else if(visitedMinDis.get(neigh) > visitedMinDis.get(element) + 1) {
-                        visitedMinDis.put(neigh, visitedMinDis.get(element) + 1);
-                    }
-                }
-            }
-        }
-
-        for (Integer i = 1; i <= mN; i++) {
-            if (!i.equals(mS)) {
-                Integer dis = visitedMinDis.get(i);
-                if (dis == null) {
-                    System.out.print(-1 + " ");
-                } else {
-                    System.out.print(dis * 6 + " ");
-                }
-            }
-        }
-        System.out.println();
-    }
-
-    private static void parseArguments(Scanner scanner) {
-        mN = scanner.nextInt();
-        mM = scanner.nextInt();
-
-        mNodeToNeigh = new HashMap<>(mM);
-        int x;
-        int y;
-        for (int i = 0; i < mM; i++) {
-            x = scanner.nextInt();
-            y = scanner.nextInt();
-            Set<Integer> neighX;
-            if(mNodeToNeigh.get(x) == null) {
-                neighX = new HashSet<Integer>();
-            } else {
-                neighX = mNodeToNeigh.get(x);
-            }
-            neighX.add(y);
-            mNodeToNeigh.put(x, neighX);
-
-            Set<Integer> neighY;
-            if(mNodeToNeigh.get(y) == null) {
-                neighY = new HashSet<Integer>();
-            } else {
-                neighY = mNodeToNeigh.get(y);
-            }
-            neighY.add(x);
-            mNodeToNeigh.put(y, neighY);
-        }
-        mS = new Integer(scanner.nextInt());
-    }
-}
- 
- */

@@ -16,5 +16,6 @@
     <Folder Include="Concepts\TreesHeapsGraphs\" />
     <Folder Include="Concepts\BfsDfs\" />
     <Folder Include="Concepts\Recursions\" />
+    <Folder Include="Leetcode\" />
   </ItemGroup>
 </Project>
