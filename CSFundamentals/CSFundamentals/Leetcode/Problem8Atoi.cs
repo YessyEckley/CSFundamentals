@@ -18,7 +18,8 @@ namespace CSFundamentals.Leetcode
         public static int MyAtoi(string s)
         {
             // We can also iterrate through the string to eliminate the string and ignore the whitespaces
-            s = s.TrimStart();
+            s = s.Replace(" ", "");
+            //s = s.TrimStart(); // This is another option
 
             if (s.Length == 0)
             {

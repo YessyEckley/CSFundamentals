@@ -64,6 +64,8 @@ namespace CSFundamentals
  * 
  * This is one with a complicated algorithm. It's unlikely to be asked but it's a great watch: https://www.youtube.com/watch?v=qz9tKlF431k
  * 
+ * IMPORTANT FOR DATA STRUCTURE INFO: C# System library -> https://docs.microsoft.com/en-us/dotnet/api/system?view=netcore-3.1
+ * 
  * Resources
  * https://leetcode.com/
  * https://www.hackerrank.com/
@@ -93,6 +95,8 @@ namespace CSFundamentals
  * https://en.wikipedia.org/wiki/Palindrome
  * https://en.wikipedia.org/wiki/Pseudocode
  * https://en.wikibooks.org/wiki/Algorithm_Implementation
+ * 
+ * https://www.techiedelight.com/get-subarray-of-array-csharp/
  * 
  * We will not write here to proof concepts, we will use test for that
  * 
