@@ -88,5 +88,31 @@ namespace CSFundamentals.Concepts.ArraysStrings
 
             return returnList;
         }
+
+        private void Permute(int[] nums, int startIndex, int endIndex, List<int[]> permutationList)
+        {
+            if (startIndex == endIndex)
+            {
+                var newarray = new int[nums.Length];
+                newarray = (int[])nums.Clone();
+                permutationList.Add(newarray);
+            }
+            else
+            {
+                for (int i = startIndex; i <= endIndex; i++)
+                {
+                    SwapValues(nums, nums[startIndex], nums[i]);
+                    Permute(nums, startIndex + 1, endIndex, permutationList);
+                    SwapValues(nums, nums[startIndex], nums[i]);
+                }
+            }
+        }
+
+        private static void SwapValues(int[] nums, int firstIndex, int secondIndex)
+        {
+            var temp = nums[firstIndex];
+            nums[firstIndex] = nums[secondIndex];
+            nums[secondIndex] = temp;
+        }
     }
 }

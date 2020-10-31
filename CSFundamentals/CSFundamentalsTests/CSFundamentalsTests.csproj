@@ -19,6 +19,7 @@
     <Folder Include="Concepts\Lists\" />
     <Folder Include="Concepts\StackQueues\" />
     <Folder Include="Concepts\Algorithms\" />
+    <Folder Include="Leetcode\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CSFundamentals\CSFundamentals.csproj" />
