@@ -43,4 +43,25 @@ namespace CSFundamentalsTests.Leetcode
             Assert.Equal(expected, actual);
         }
     }
+
+    public class Problem125ValidPalindromeTest
+    {
+        [Fact]
+        public void WHEN_IsPalindrome_EXPECT_trueResult()
+        {
+            var input = "A man, a plan, a canal: Panama";
+            var expected = true;
+            var actual = CSFundamentals.Leetcode.Problem125ValidPalindrome.IsPalindrome(input);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void WHEN_IsPalindrome2_EXPECT_trueResult()
+        {
+            var input = "A man, a plan, a canal: Panama";
+            var expected = true;
+            var actual = CSFundamentals.Leetcode.Problem125ValidPalindrome.IsPalindrome2(input);
+            Assert.Equal(expected, actual);
+        }
+    }
 }

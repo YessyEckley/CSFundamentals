@@ -4,6 +4,9 @@
     {
         /*
          * Leetcode problem: https://leetcode.com/problems/multiply-strings/
+         * 
+         * Resources: https://www.geeksforgeeks.org/multiply-large-numbers-represented-as-strings/
+         *            https://en.wikipedia.org/wiki/Multiplication_algorithm
          */
 
         public static string Multiply(string num1, string num2)

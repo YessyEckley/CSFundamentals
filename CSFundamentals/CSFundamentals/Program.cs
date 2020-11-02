@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CSFundamentals.Concepts.ArraysStrings;
 using CSFundamentals.Concepts.HashTables;
@@ -12,8 +13,17 @@ namespace CSFundamentals
             //Concepts.Sorts.InsertionSort.Display();
             //Concepts.Sorts.QuicksortTwoHrSorting.QuickSort(new int[] { 5, 8, 1, 3, 7, 9, 2 });
             //Concepts.BfsDfs.BfsShortestReach.Worker();
+            //Console.WriteLine(Leetcode.Problem8Atoi.MyAtoi("3.145678"));
 
-            Console.WriteLine(Leetcode.Problem8Atoi.MyAtoi("3.145678"));
+            // Leetcode class teplate
+            //public class Problem
+            //{
+            //    /*
+            //     * Leetcode problem: 
+            //     * For more solutions: 
+            //     */
+            //}
+
         }
     }
 }
