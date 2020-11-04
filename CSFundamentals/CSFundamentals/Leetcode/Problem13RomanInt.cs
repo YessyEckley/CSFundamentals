@@ -169,4 +169,94 @@ namespace CSFundamentals.Leetcode
             return romanInteger;
         }
     }
+
+
+    public class Problem
+    {
+        /*
+         * Leetcode problem: https://leetcode.com/problems/move-zeroes/
+         * For more solutions: https://leetcode.com/problems/move-zeroes/solution/
+         * 
+         * We can use two pointer to complete this operation
+         * 
+         * 1. loop throught the int[]
+         * 2. verify if the int element == 0
+         * 3. if true, loop through the following elements, until we find a non-zero element
+         *      -> make sure is not our of bounds
+         * 4. once a non-zero is found, swap the values
+         *    -> no need for an else just keep iterating
+         * 
+         * 
+         * Input: [0,1,0,3,12]
+         *      Index 0
+         *      0 -> 0 == 0 true
+         *      Compare next element 1 == 0 false Then
+         *          Swap the the element to index 0 -> 1 0 0 3 12
+         *      
+         *      Index 1
+         *      0 -> 0 == 0 true
+         *      Compare next element 0 == 0 true Then
+         *      Compare next element 3 == 0 false Then
+         *          Swap the the element to index 1 -> 1 3 0 0 12
+         *          
+         *      Index 2
+         *      0 -> 0 == 0 true
+         *      Compare next element 0 == 0 true Then
+         *      Compare next element 12 == 0 false Then
+         *          Swap the the element to index 2 -> 1 3 12 0 0
+         * 
+         * Output: [1,3,12,0,0]
+         */
+
+        public static void MoveZeroes(int[] nums)
+        {
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 0)
+                {
+                    var n = i + 1;
+
+                    while (n < nums.Length)
+                    {
+                        if (nums[n] != 0)
+                        {
+                            var temp = nums[i];
+                            nums[i] = nums[n];
+                            nums[n] = temp;
+
+                            break;
+                        }
+
+                        n++;
+                    }
+                }
+            }
+        }
+
+        public static void MoveZeroes2(int[] nums)
+        {
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (nums[i] == 0)
+                {
+                    var n = i + 1;
+                    var isSwapComplete = false;
+
+                    while (n < nums.Length && !isSwapComplete)
+                    {
+                        if (nums[n] != 0)
+                        {
+                            var temp = nums[i];
+                            nums[i] = nums[n];
+                            nums[n] = temp;
+
+                            isSwapComplete = true;
+                        }
+
+                        n++;
+                    }
+                }
+            }
+        }
+    }
 }
