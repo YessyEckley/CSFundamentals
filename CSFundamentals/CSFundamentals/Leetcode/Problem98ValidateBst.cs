@@ -78,8 +78,8 @@ namespace CSFundamentals.Leetcode
         // Approack #2 -> Using iteration and stacks
         public bool IsValidBST2(TreeNode root)
         {
+            // TODO: Implement at a later time
             throw new NotImplementedException();
-            //return IsValidBST(root, null, null);
         }
 
         /*
