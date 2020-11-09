@@ -39,7 +39,7 @@ namespace CSFundamentals.Concepts.HashTables
          */
 
         // Approach #1 -> Conver unsing Linq
-        public static string IsColorfulNumbers(int number)
+        public string IsColorfulNumbers(int number)
         {
             var colorfulNumberDictionary = new Dictionary<int, string>();
             var numberString = number.ToString();
@@ -85,7 +85,7 @@ namespace CSFundamentals.Concepts.HashTables
 
         // Approach #2
         // Another option is to calculate each number using modulus
-        public static string IsColorfulNumbers2(int number)
+        public string IsColorfulNumbers2(int number)
         {
             if(number < 10)
             {
@@ -146,11 +146,11 @@ namespace CSFundamentals.Concepts.HashTables
         public void ColorfulNumbersWorker()
         {
             // This is for quick testing
-            Console.WriteLine($"Result: {ColorfulNumbers.IsColorfulNumbers(0)}");
+            Console.WriteLine($"Result: {(new ColorfulNumbers()).IsColorfulNumbers(0)}");
             Console.WriteLine();
-            Console.WriteLine($"Result: {ColorfulNumbers.IsColorfulNumbers(3245)}");
+            Console.WriteLine($"Result: {(new ColorfulNumbers()).IsColorfulNumbers(3245)}");
             Console.WriteLine();
-            Console.WriteLine($"Result: {ColorfulNumbers.IsColorfulNumbers(326)}");
+            Console.WriteLine($"Result: {(new ColorfulNumbers()).IsColorfulNumbers(326)}");
         }
     }
 }

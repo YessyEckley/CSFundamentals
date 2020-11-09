@@ -14,7 +14,7 @@ namespace CSFundamentals.Concepts.Sorts
          * IMPOTANT: Debug your code by talking out loud
          */
 
-        public static void InsertionSort2(int n, int[] arr)
+        public void InsertionSort2(int n, int[] arr)
         {
             for (var i = 1; i < n; i++)
             {

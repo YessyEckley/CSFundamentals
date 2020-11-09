@@ -4,7 +4,7 @@ namespace CSFundamentals.Concepts.Sorts
     public class SelectionSort
     {
         // Approach #1
-        public static void Sort<T>(T[] array) where T : IComparable
+        public void Sort<T>(T[] array) where T : IComparable
         {
             for (int i = 0; i < array.Length - 1; i++)
             {
@@ -23,7 +23,7 @@ namespace CSFundamentals.Concepts.Sorts
         }
 
         // Approach #2
-        public static void Sort2<T>(T[] array) where T : IComparable
+        public void Sort2<T>(T[] array) where T : IComparable
         {
             var size = array.Length;
             int max;
@@ -42,7 +42,7 @@ namespace CSFundamentals.Concepts.Sorts
             }
         }
 
-        public static void Swap<T>(T[] array, int first, int second)
+        public void Swap<T>(T[] array, int first, int second)
         {
             var current = array[first];
             array[first] = array[second];
@@ -52,17 +52,17 @@ namespace CSFundamentals.Concepts.Sorts
         public void Display()
         {
             var integerValues = new int[] { -11, 12, -42, 0, 1, 90, 68, 6, -9 };
-            SelectionSort.Sort<int>(integerValues);
+            (new SelectionSort()).Sort<int>(integerValues);
             Console.WriteLine(string.Join(" | ", integerValues));
 
             var stringValues = new string[] { "Mary", "Marcin", "Ann", "James", "George", "Nicole" };
-            SelectionSort.Sort<string>(stringValues);
+            (new SelectionSort()).Sort<string>(stringValues);
             Console.WriteLine(string.Join(" | ", stringValues));
 
-            SelectionSort.Sort2<int>(integerValues);
+            (new SelectionSort()).Sort2<int>(integerValues);
             Console.WriteLine(string.Join(" | ", integerValues));
 
-            SelectionSort.Sort2<string>(stringValues);
+            (new SelectionSort()).Sort2<string>(stringValues);
             Console.WriteLine(string.Join(" | ", stringValues));
         }
     }

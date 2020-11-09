@@ -32,7 +32,7 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
             }
         }
 
-        public static Node Insert(Node root, int data)
+        public Node Insert(Node root, int data)
         {
             if (root == null)
             {

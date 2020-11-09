@@ -6,7 +6,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
     public class ArrayMutations<T>
     {
         // TODO: create another version without the Array.Copy
-        public static T[] AddToStart(T[] a, T aValue)
+        public T[] AddToStart(T[] a, T aValue)
         {
             var result = new T[a.Count() + 1];
 
@@ -22,7 +22,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return result;
         }
 
-        public static T[] AddToEnd(T[] a, T aValue)
+        public T[] AddToEnd(T[] a, T aValue)
         {
             var result = new T[a.Count() + 1];
 
@@ -38,7 +38,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return result;
         }
 
-        public static T[] InsertAt(T[] a, int index, T aValue)
+        public T[] InsertAt(T[] a, int index, T aValue)
         {
             // TODO: Maybe we can simplyfy this
 

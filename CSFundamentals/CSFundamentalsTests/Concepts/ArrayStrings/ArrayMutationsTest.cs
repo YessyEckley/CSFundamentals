@@ -19,7 +19,7 @@ namespace CSFundamentalsTests.Concepts.ArrayStrings
         {
             var a = Array.ConvertAll("1 2 3 4 5".Split(" "), conv => Convert.ToInt32(conv));
             var expected = Array.ConvertAll("6 1 2 3 4 5".Split(" "), conv => Convert.ToInt32(conv));
-            var actual = CSFundamentals.Concepts.ArraysStrings.ArrayMutations<int>.AddToStart(a, 6);
+            var actual = (new CSFundamentals.Concepts.ArraysStrings.ArrayMutations<int>()).AddToStart(a, 6);
 
             Assert.Equal(expected, actual);
         }
@@ -29,7 +29,7 @@ namespace CSFundamentalsTests.Concepts.ArrayStrings
         {
             var a = Array.ConvertAll("1 2 3 4 5".Split(" "), conv => Convert.ToInt32(conv));
             var expected = Array.ConvertAll("1 2 3 4 5 6".Split(" "), conv => Convert.ToInt32(conv));
-            var actual = CSFundamentals.Concepts.ArraysStrings.ArrayMutations<int>.AddToEnd(a, 6);
+            var actual = (new CSFundamentals.Concepts.ArraysStrings.ArrayMutations<int>()).AddToEnd(a, 6);
 
             Assert.Equal(expected, actual);
         }
@@ -39,7 +39,7 @@ namespace CSFundamentalsTests.Concepts.ArrayStrings
         {
             var a = Array.ConvertAll("1 2 3 4 5 6".Split(" "), conv => Convert.ToInt32(conv));
             var expected = Array.ConvertAll("1 2 3 7 4 5 6".Split(" "), conv => Convert.ToInt32(conv));
-            var actual = CSFundamentals.Concepts.ArraysStrings.ArrayMutations<int>.InsertAt(a, 3, 7);
+            var actual = (new CSFundamentals.Concepts.ArraysStrings.ArrayMutations<int>()).InsertAt(a, 3, 7);
 
             Assert.Equal(expected, actual);
         }
@@ -49,7 +49,7 @@ namespace CSFundamentalsTests.Concepts.ArrayStrings
         {
             var a = Array.ConvertAll("1 2 3 4 5 6".Split(" "), conv => Convert.ToInt32(conv));
             var expected = Array.ConvertAll("1 2 3 4 5 6 7".Split(" "), conv => Convert.ToInt32(conv));
-            var actual = CSFundamentals.Concepts.ArraysStrings.ArrayMutations<int>.InsertAt(a, 6, 7);
+            var actual = (new CSFundamentals.Concepts.ArraysStrings.ArrayMutations<int>()).InsertAt(a, 6, 7);
 
             Assert.Equal(expected, actual);
         }

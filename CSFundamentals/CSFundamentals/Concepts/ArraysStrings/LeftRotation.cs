@@ -15,7 +15,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          * 
          */
 
-        public static int[] RotLeftLogic(int[] a, int d)
+        public int[] RotLeftLogic(int[] a, int d)
         {
             for (int i = 0; i < d; i++)
             {
@@ -46,7 +46,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return a;
         }
 
-        public static int[] RotLeftFasterLogic(int[] a, int d)
+        public int[] RotLeftFasterLogic(int[] a, int d)
         {
             // Rule of thumb: Always create a new variable to arrange data as it guarantees that we are inserting into a clean variable.
             // This is a faster way to the result as we are spliting the array right on the new starting point and making insertions from that point on.
@@ -70,7 +70,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return newArray;
         }
 
-        public static int[] RotLeftAnotherForLogic(int[] a, int d)
+        public int[] RotLeftAnotherForLogic(int[] a, int d)
         {
             for (int i = 0; i < d; i++)
             {
@@ -94,7 +94,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return a;
         }
 
-        public static int[] RotLeftCopyLogic(int[] a, int d)
+        public int[] RotLeftCopyLogic(int[] a, int d)
         {
             for (int i = 0; i < d; i++)
             {
@@ -114,7 +114,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return a;
         }
 
-        public static void LeftRotationWorker()
+        public void LeftRotationWorker()
         {
             Console.WriteLine("LeftRotation: Enter two numbers separated by a space. First number -> size of the array. Second number -> number of rotations");
             string[] nd = Console.ReadLine().Split(' ');

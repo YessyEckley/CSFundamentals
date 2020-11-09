@@ -9,7 +9,7 @@ namespace CSFundamentals.Concepts.Algorithms
          * Link to the problem: https://www.hackerrank.com/challenges/extra-long-factorials/problem
          */
 
-        public static BigInteger ExtraLongFactorialsCalculate(int n)
+        public BigInteger ExtraLongFactorialsCalculate(int n)
         {
             var factorial = new BigInteger(n);
 
@@ -21,14 +21,14 @@ namespace CSFundamentals.Concepts.Algorithms
             return factorial;
         }
 
-        public static void ExtraLongFactorialsWorker() 
+        public void ExtraLongFactorialsWorker() 
         {
             int n = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine(ExtraLongFactorialsCalculate(n));
         }
 
-        public static BigInteger ExtraLongFactorialsRecursive(int n)
+        public BigInteger ExtraLongFactorialsRecursive(int n)
         {
             var factorial = new BigInteger(1);
 

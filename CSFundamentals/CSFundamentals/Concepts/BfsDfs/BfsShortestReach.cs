@@ -29,11 +29,11 @@ namespace CSFundamentals.Concepts.BfsDfs
          * This solution didn't passed all of the test cases
          */
 
-        public static Dictionary<int, List<int>> NodeDictionary;
+        public Dictionary<int, List<int>> NodeDictionary;
 
         public const int WEIGTH = 6;
 
-        private static void BuildDictionary(int[][] edges)
+        private void BuildDictionary(int[][] edges)
         {
             NodeDictionary = new Dictionary<int, List<int>>();
             for (int i = 0; i < edges.Length; i++)
@@ -66,7 +66,7 @@ namespace CSFundamentals.Concepts.BfsDfs
             }
         }
 
-        public static int[] Bfs(int n, int m, int[][] edges, int s)
+        public int[] Bfs(int n, int m, int[][] edges, int s)
         {
             var queue = new Queue<int>();
             var visitedMinDistance = new Dictionary<int, int>();
@@ -122,7 +122,7 @@ namespace CSFundamentals.Concepts.BfsDfs
             return returnValues;
         }
 
-        public static void Worker()
+        public void Worker()
         {
             //int q = Convert.ToInt32(Console.ReadLine());
 

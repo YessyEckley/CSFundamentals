@@ -43,12 +43,12 @@ namespace CSFundamentals.Leetcode
             }
         }
 
-        public static void Flatten(TreeNode root)
+        public void Flatten(TreeNode root)
         {
             FlattenTree(root);
         }
 
-        public static TreeNode FlattenTree(TreeNode node)
+        public TreeNode FlattenTree(TreeNode node)
         {
             if (node == null)
             {
@@ -73,7 +73,7 @@ namespace CSFundamentals.Leetcode
             return rightTail == null ? leftTail : rightTail;
         }
 
-        public static void Flatten2(TreeNode root)
+        public void Flatten2(TreeNode root)
         {
             if (root == null)
             {
@@ -102,7 +102,7 @@ namespace CSFundamentals.Leetcode
             }
         }
 
-        public static void Flatten3(TreeNode root)
+        public void Flatten3(TreeNode root)
         {
             if (root == null)
             {

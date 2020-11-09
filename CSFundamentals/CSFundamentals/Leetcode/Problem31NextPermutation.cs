@@ -48,7 +48,7 @@ namespace CSFundamentals.Leetcode
             }
         }
 
-        private static void SwapValues(int[] nums, int firstIndex, int secondIndex)
+        private void SwapValues(int[] nums, int firstIndex, int secondIndex)
         {
             var temp = nums[firstIndex];
             nums[firstIndex] = nums[secondIndex];

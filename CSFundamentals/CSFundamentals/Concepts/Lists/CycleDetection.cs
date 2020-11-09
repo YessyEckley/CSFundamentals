@@ -62,7 +62,7 @@ namespace CSFundamentals.Concepts.Lists
             }
         }
 
-        public static void PrintSinglyLinkedList(SinglyLinkedListNode node, string sep)
+        public void PrintSinglyLinkedList(SinglyLinkedListNode node, string sep)
         {
             while (node != null)
             {
@@ -77,7 +77,7 @@ namespace CSFundamentals.Concepts.Lists
             }
         }
 
-        public static bool HasCycle(SinglyLinkedListNode head)
+        public bool HasCycle(SinglyLinkedListNode head)
         {
             // Maybe another solution? This one worked but the recursion creates so many local variables that it overflows the stack
             //var isClycle = false;
@@ -144,7 +144,7 @@ namespace CSFundamentals.Concepts.Lists
             //return false;
         }
 
-        public static void CycleDetectionWorker()
+        public void CycleDetectionWorker()
         {
             int tests = Convert.ToInt32(Console.ReadLine());
 

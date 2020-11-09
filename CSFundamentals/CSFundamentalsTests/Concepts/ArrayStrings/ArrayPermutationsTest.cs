@@ -25,7 +25,7 @@ namespace CSFundamentalsTests.Concepts.ArrayStrings
                 "b, a"
             };
 
-            var actual = CSFundamentals.Concepts.ArraysStrings.ArrayPermutations<string>.Permutation(input, 0, input.Length - 1, new List<string[]>());
+            var actual = (new CSFundamentals.Concepts.ArraysStrings.ArrayPermutations<string>()).Permutation(input, 0, input.Length - 1, new List<string[]>());
             var stringifiedActual = actual.Select(s => string.Join(", ", s)).ToList();
 
             Assert.Equal(string.Join(" -> ", expected), string.Join(" -> ", stringifiedActual));
@@ -46,7 +46,7 @@ namespace CSFundamentalsTests.Concepts.ArrayStrings
                 "3, 1, 2"
             };
 
-            var actual = CSFundamentals.Concepts.ArraysStrings.ArrayPermutations<int>.Permutation(input, 0, input.Length - 1, new List<int[]>());
+            var actual = (new CSFundamentals.Concepts.ArraysStrings.ArrayPermutations<int>()).Permutation(input, 0, input.Length - 1, new List<int[]>());
             var stringifiedActual = actual.Select(s => string.Join(", ", s)).ToList();
 
             Assert.Equal(string.Join(" -> ", expected), string.Join(" -> ", stringifiedActual));

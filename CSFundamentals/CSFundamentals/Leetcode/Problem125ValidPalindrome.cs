@@ -12,7 +12,7 @@ namespace CSFundamentals.Leetcode
          * For more solutions: https://leetcode.com/problems/valid-palindrome/solution/
          */
 
-        public static bool IsPalindrome(string s)
+        public bool IsPalindrome(string s)
         {
             if (s.Length == 0)
             {
@@ -51,7 +51,7 @@ namespace CSFundamentals.Leetcode
         }
 
         // Approach #2 using Linq but it didn't perform that good
-        public static bool IsPalindrome2(string s)
+        public bool IsPalindrome2(string s)
         {
             var newString = string.Join("", s.Where(x => char.IsLetterOrDigit(x)).Select(s => char.ToLower(s)));
 

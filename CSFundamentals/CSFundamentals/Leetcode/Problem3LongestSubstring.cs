@@ -16,7 +16,7 @@ namespace CSFundamentals.Leetcode
          * This approach uses a dictionary to find the solution.
          * We need to remember this is a search solution.
          */
-        public static int LengthOfLongestSubstring(string s)
+        public int LengthOfLongestSubstring(string s)
         {
             if (s.Length == 0)
             {
@@ -51,7 +51,7 @@ namespace CSFundamentals.Leetcode
          * We need to remember this is a search solution.
          * We can use the charValue - 'a' logic to assign and find the index of the array
          */
-        public static int LengthOfLongestSubstring2(string s)
+        public int LengthOfLongestSubstring2(string s)
         {
             if (s.Length == 0)
             {

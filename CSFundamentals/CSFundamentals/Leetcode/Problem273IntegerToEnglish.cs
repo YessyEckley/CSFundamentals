@@ -42,7 +42,7 @@ namespace CSFundamentals.Leetcode
          *                  91 % 10 = 1
          */
 
-        public static string NumberToWords(int num)
+        public string NumberToWords(int num)
         {
             if (num == 0)
             {
@@ -80,7 +80,7 @@ namespace CSFundamentals.Leetcode
             return sb.ToString().Trim();
         }
 
-        private static void CalcHundredOrLess(int num, StringBuilder sb)
+        private void CalcHundredOrLess(int num, StringBuilder sb)
         {
             var tempNum = num;
 
@@ -106,7 +106,7 @@ namespace CSFundamentals.Leetcode
             }
         }
 
-        private static string StringifyingNum(int num)
+        private string StringifyingNum(int num)
         {
             var returnStringValue = string.Empty;
 
@@ -146,7 +146,7 @@ namespace CSFundamentals.Leetcode
             return returnStringValue;
         }
 
-        private static string StringifyingTeens(int num)
+        private string StringifyingTeens(int num)
         {
             var returnStringValue = string.Empty;
 
@@ -189,7 +189,7 @@ namespace CSFundamentals.Leetcode
             return returnStringValue;
         }
 
-        private static string StringifyingTenthsOverTwenty(int num)
+        private string StringifyingTenthsOverTwenty(int num)
         {
             var returnStringValue = string.Empty;
 

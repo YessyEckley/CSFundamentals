@@ -34,14 +34,12 @@ namespace CSFundamentals.Leetcode
 
         public int MaxPathSum(TreeNode root)
         {
-            _maxSumValue = int.MinValue;
-
             PathSum(root);
 
             return _maxSumValue;
         }
 
-        private int _maxSumValue;
+        private int _maxSumValue = int.MinValue;
 
         private int PathSum(TreeNode root)
         {
@@ -100,6 +98,105 @@ namespace CSFundamentals.Leetcode
             }
 
             return maxValue;
+        }
+    }
+
+    public class Problem426BinaryTreeToSortedDoubleLinkedList
+    {
+        /*
+         * Leetcode problem: https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/
+         * For more solutions: https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/solution/
+         * 
+        Input: root = [4,2,5,1,3]
+        Output: [1,2,3,4,5]
+        Explanation: The figure below shows the transformed BST. 
+                     The solid line indicates the successor relationship, while the dashed line means the predecessor relationship.
+
+        -> The output looks like an In-Order traversal
+        -> the results are put in a doubly linked list
+                -> we can use the binary tree as the main structure
+                    -> the left will be the previous and the right will be the next
+                    -> the previous of the first element is the last element, and the next of the last element is the first element
+        -> transform in place -> do not create a new data structure
+        ->
+
+        Input: root = [2,1,3]
+        Output: [1,2,3]
+        
+        Input: root = []
+        Output: []
+        Explanation: Input is an empty tree. Output is also an empty Linked List.
+        
+        Input: root = [1]
+        Output: [1]
+         */
+
+        // Definition for a Node.
+        public class Node
+        {
+            public int val;
+            public Node left;
+            public Node right;
+
+            public Node() { }
+
+            public Node(int _val)
+            {
+                val = _val;
+                left = null;
+                right = null;
+            }
+
+            public Node(int _val, Node _left, Node _right)
+            {
+                val = _val;
+                left = _left;
+                right = _right;
+            }
+        }
+
+        public Node Head { get; set; } = null;
+        public Node Tail { get; set; } = null;
+
+        public Node TreeToDoublyList(Node root)
+        {
+            if (root == null)
+            {
+                return null;
+            }
+
+            TraverseHelper(root);
+
+            Head.left = Tail;
+            Tail.right = Head;
+
+            return Head;
+        }
+
+        public void TraverseHelper(Node root)
+        {
+            if (root != null)
+            {
+                // In order traversale travels
+                //left
+                TraverseHelper(root.left);
+
+                //root
+                if (Tail != null)
+                {
+                    Tail.right = root;
+                    root.left = Tail;
+                }
+                else
+                {
+                    Head = root;
+                }
+
+                Tail = root;
+
+                //right
+                TraverseHelper(root.right);
+            }
         }
     }
 }

@@ -47,7 +47,7 @@ namespace CSFundamentals.Concepts.Lists
             }
         }
 
-        public static void PrintSinglyLinkedList(SinglyLinkedListNode node, string sep)
+        public void PrintSinglyLinkedList(SinglyLinkedListNode node, string sep)
         {
             while (node != null)
             {
@@ -62,7 +62,7 @@ namespace CSFundamentals.Concepts.Lists
             }
         }
 
-        public static SinglyLinkedListNode InsertNodeAtPosition(SinglyLinkedListNode head, int data, int position)
+        public SinglyLinkedListNode InsertNodeAtPosition(SinglyLinkedListNode head, int data, int position)
         {
             // Option #1
             if (head == null)
@@ -119,7 +119,7 @@ namespace CSFundamentals.Concepts.Lists
             //return newHead;
         }
 
-        public static void NodeInsertAtLinkedListWorker()
+        public void NodeInsertAtLinkedListWorker()
         {
             SinglyLinkedList llist = new SinglyLinkedList();
 

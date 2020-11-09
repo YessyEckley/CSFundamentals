@@ -85,7 +85,7 @@ namespace CSFundamentals.Concepts.HashTables
          */
 
         // The following method passes all the test on the website -> approach #1
-        public static int[] IceCreamParlorCalculateEmbededForLoop(int m, int[] arr)
+        public int[] IceCreamParlorCalculateEmbededForLoop(int m, int[] arr)
         {
             // This is a brute force approach just sticking with the array
             // The time complexity is O(n^2), according to some, I would debate that it is O(arr.Length - 1 * arr.Length - 2) but basically it is similar
@@ -110,7 +110,7 @@ namespace CSFundamentals.Concepts.HashTables
         }
 
         // The following method passes all the test on the website -> approach #2
-        public static int[] IceCreamParlorCalculateHashtableEmbededForLoop(int m, int[] arr)
+        public int[] IceCreamParlorCalculateHashtableEmbededForLoop(int m, int[] arr)
         {
             // This was my original try that I wasn't happy about
             // Too much computational overhead with the many looks, speecially the embeded one
@@ -142,7 +142,7 @@ namespace CSFundamentals.Concepts.HashTables
         }
 
         // The following method passes all the test on the website -> approach #3
-        public static int[] IceCreamParlorCalculateDictionaryListSearchApproach1(int m, int[] arr)
+        public int[] IceCreamParlorCalculateDictionaryListSearchApproach1(int m, int[] arr)
         {
             var dictionary = new Dictionary<int, int>();
             var result = new int[2];
@@ -180,7 +180,7 @@ namespace CSFundamentals.Concepts.HashTables
         }
 
         // The following method passes all the test on the website - approach #4
-        public static int[] IceCreamParlorCalculateDictionaryListSearchApproach2(int m, int[] arr)
+        public int[] IceCreamParlorCalculateDictionaryListSearchApproach2(int m, int[] arr)
         {
             var dictionary = new Dictionary<int, List<int>>();
             var result = new int[2];
@@ -222,7 +222,7 @@ namespace CSFundamentals.Concepts.HashTables
         // IMPORTANT: We need to make sure we don't select the same record we are trying to loop through -> Maybe compare if the prices are the same
         // Then, make sure we order the indexies
 
-        public static void IceCreamParlorWorker()
+        public void IceCreamParlorWorker()
         {
             int t = Convert.ToInt32(Console.ReadLine());
 

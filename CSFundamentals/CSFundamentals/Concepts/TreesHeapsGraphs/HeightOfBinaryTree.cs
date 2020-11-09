@@ -32,7 +32,7 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
             }
         }
 
-        public static int Height(Node root)
+        public int Height(Node root)
         {
             if (root == null || (root.Left == null && root.Right == null))
             {
@@ -42,7 +42,7 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
             return Math.Max(Height(root.Left) + 1, Height(root.Right) + 1);
         }
 
-        public static int MaxDepth(Node node)
+        public int MaxDepth(Node node)
         {
             if (node == null)
             {

@@ -12,7 +12,7 @@ namespace CSFundamentals.Leetcode
          * For more solutions: https://leetcode.com/problems/group-anagrams/solution/
          */
 
-        public static IList<IList<string>> GroupAnagrams(string[] strs)
+        public IList<IList<string>> GroupAnagrams(string[] strs)
         {
             IList<IList<string>> returnValue = new List<IList<string>>();
 
@@ -53,7 +53,7 @@ namespace CSFundamentals.Leetcode
             return returnValue;
         }
 
-        public static IList<IList<string>> GroupAnagrams2(string[] strs)
+        public IList<IList<string>> GroupAnagrams2(string[] strs)
         {
             IList<IList<string>> returnValue = new List<IList<string>>();
 

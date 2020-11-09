@@ -8,7 +8,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          * Link to the problem: https://www.hackerrank.com/challenges/a-very-big-sum/problem
          */
 
-        public static long AVeryBigSumLogic(long[] ar)
+        public long AVeryBigSumLogic(long[] ar)
         {
             var result = 0L;
 
@@ -20,7 +20,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return result;
         }
 
-        public static void AVeryBigSumWorker()
+        public void AVeryBigSumWorker()
         {
             Console.WriteLine("A Very Big Sum: Enter a size.");
             int arCount = Convert.ToInt32(Console.ReadLine());

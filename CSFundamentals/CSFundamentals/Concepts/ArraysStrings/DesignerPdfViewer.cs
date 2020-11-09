@@ -11,7 +11,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          */
 
         // Approach #1
-        public static int DesignerPdfViewerLogic(int[] h, string word)
+        public int DesignerPdfViewerLogic(int[] h, string word)
         {
             if (word.Count() > 10)
             {
@@ -45,7 +45,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
         }
 
         // Approach #2
-        public static int DesignerPdfViewerLogic2(int[] h, string word)
+        public int DesignerPdfViewerLogic2(int[] h, string word)
         {
             if (word.Count() > 10)
             {
@@ -77,7 +77,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return word.Count() * topHeight;
         }
 
-        public static void DesignerPdfViewerWorker()
+        public void DesignerPdfViewerWorker()
         {
             Console.WriteLine("Designer PDF Viewer: Write 26 lowercase letter heights, separated by a space, between the values 1 and 7.");
             var h = Array.ConvertAll(Console.ReadLine().Split(' '), hTemp => Convert.ToInt32(hTemp));

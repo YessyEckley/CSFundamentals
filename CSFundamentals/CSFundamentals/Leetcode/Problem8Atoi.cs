@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace CSFundamentals.Leetcode
 {
@@ -15,7 +14,7 @@ namespace CSFundamentals.Leetcode
          */
 
         // Approach #1
-        public static int MyAtoi(string s)
+        public int MyAtoi(string s)
         {
             // We can also iterrate through the string to eliminate the string and ignore the whitespaces
             s = s.Replace(" ", "");

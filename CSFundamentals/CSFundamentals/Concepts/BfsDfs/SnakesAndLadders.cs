@@ -113,7 +113,7 @@ namespace CSFundamentals.Concepts.BfsDfs
             } */
         }
 
-        public static int QuickestWayUp(int[][] ladders, int[][] snakes)
+        public int QuickestWayUp(int[][] ladders, int[][] snakes)
         {
             var snakesAndLaddersGraph = new SnakesAndLaddersGraph(ladders, snakes);
             var queue = new Queue<int>();

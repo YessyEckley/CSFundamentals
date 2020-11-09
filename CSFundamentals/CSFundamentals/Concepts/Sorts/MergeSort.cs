@@ -10,14 +10,14 @@ namespace CSFundamentals.Concepts.Sorts
         {
         }
 
-        public static void Sort(int[] array)
+        public void Sort(int[] array)
         {
             var tempArray = new int[array.Length];
 
             Sort(array, tempArray, 0, array.Length - 1);
         }
 
-        public static void Sort(int[] array, int[] tempArray, int leftStart, int rightEnd)
+        public void Sort(int[] array, int[] tempArray, int leftStart, int rightEnd)
         {
             if (leftStart >= rightEnd)
             {
@@ -32,7 +32,7 @@ namespace CSFundamentals.Concepts.Sorts
             MergeHalves(array, tempArray, leftStart, rightEnd);
         }
 
-        public static void MergeHalves(int[] array, int[] tempArray, int leftStart, int rightEnd)
+        public void MergeHalves(int[] array, int[] tempArray, int leftStart, int rightEnd)
         {
             var leftEnd = (leftStart + rightEnd) / 2;
             var rightStart = leftEnd + 1;
@@ -67,17 +67,17 @@ namespace CSFundamentals.Concepts.Sorts
         public void Display()
         {
             var integerValues = new int[] { -11, 12, -42, 0, 1, 90, 68, 6, -9 };
-            MergeSort.Sort(integerValues);
+            (new MergeSort()).Sort(integerValues);
             Console.WriteLine(string.Join(" | ", integerValues));
 
             //var stringValues = new string[] { "Mary", "Marcin", "Ann", "James", "George", "Nicole" };
-            //MergeSort.Sort<string>(stringValues);
+            //(new MergeSort()).Sort<string>(stringValues);
             //Console.WriteLine(string.Join(" | ", stringValues));
 
-            //MergeSort.Sort2<int>(integerValues);
+            //(new MergeSort()).Sort2<int>(integerValues);
             //Console.WriteLine(string.Join(" | ", integerValues));
 
-            //MergeSort.Sort2<string>(stringValues);
+            //(new MergeSort()).Sort2<string>(stringValues);
             //Console.WriteLine(string.Join(" | ", stringValues));
         }
     }

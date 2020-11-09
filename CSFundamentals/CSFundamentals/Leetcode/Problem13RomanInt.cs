@@ -15,7 +15,7 @@ namespace CSFundamentals.Leetcode
          * This is my original approache to this problem
          * It had a linear time complexity but it still manage to perform over 70% faster than other solutions
          */
-        public static int RomanToInt(string s)
+        public int RomanToInt(string s)
         {
             var romanInteger = 0;
 
@@ -76,7 +76,7 @@ namespace CSFundamentals.Leetcode
         /* Approach #2
          * This approach uses a dictionary to do the search
          */
-        public static Dictionary<string, int> RomanValues2 => new Dictionary<string, int>
+        public Dictionary<string, int> RomanValues2 => new Dictionary<string, int>
         {
             { "I", 1 },
             { "V", 5 },
@@ -93,7 +93,7 @@ namespace CSFundamentals.Leetcode
             { "CM", 900 },
         };
 
-        public static int RomanToInt2(string s)
+        public int RomanToInt2(string s)
         {
             var romanInteger = 0;
             var indexCounter = 0;
@@ -126,7 +126,7 @@ namespace CSFundamentals.Leetcode
          * This approach uses a dictionary to do the search
          * This is yet another approach
          */
-        public static Dictionary<string, int> RomanValues3 => new Dictionary<string, int>
+        public Dictionary<string, int> RomanValues3 => new Dictionary<string, int>
         {
             { "I", 1 },
             { "V", 5 },
@@ -137,7 +137,7 @@ namespace CSFundamentals.Leetcode
             { "M", 1000 },
         };
 
-        public static int RomanToInt3(string s)
+        public int RomanToInt3(string s)
         {
             var romanInteger = 0;
             var indexCounter = 0;
@@ -208,7 +208,7 @@ namespace CSFundamentals.Leetcode
          * Output: [1,3,12,0,0]
          */
 
-        public static void MoveZeroes(int[] nums)
+        public void MoveZeroes(int[] nums)
         {
             for (int i = 0; i < nums.Length; i++)
             {
@@ -233,7 +233,7 @@ namespace CSFundamentals.Leetcode
             }
         }
 
-        public static void MoveZeroes2(int[] nums)
+        public void MoveZeroes2(int[] nums)
         {
             for (int i = 0; i < nums.Length; i++)
             {

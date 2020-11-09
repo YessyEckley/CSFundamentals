@@ -10,7 +10,7 @@ namespace CSFundamentals.Leetcode
          * For more solutions: https://leetcode.com/problems/add-binary/solution/
          */
 
-        public static string AddBinary(string a, string b)
+        public string AddBinary(string a, string b)
         {
             // This solution will not pass all of the Leetcode's test cases due to the binary being too big and out of scope to be translated
             var aValue = Convert.ToInt64(a, 2);
@@ -19,7 +19,7 @@ namespace CSFundamentals.Leetcode
             return Convert.ToString(aValue + bValue, 2);
         }
 
-        public static string AddBinary2(string a, string b)
+        public string AddBinary2(string a, string b)
         {
             var sb = new StringBuilder();
             var carry = 0;

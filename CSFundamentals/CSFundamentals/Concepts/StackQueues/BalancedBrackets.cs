@@ -59,7 +59,7 @@ namespace CSFundamentals.Concepts.StackQueues
             }
         }
 
-        public static string IsBalanced(string s)
+        public string IsBalanced(string s)
         {
             /*
              * In this example we will use stacks to find our solution
@@ -147,7 +147,7 @@ namespace CSFundamentals.Concepts.StackQueues
             return stack.IsEmpty() ? "YES" : "NO";
         }
 
-        public static string IsBalancedUsingStack(string s)
+        public string IsBalancedUsingStack(string s)
         {
             /*
              * In this example we will use stacks to find our solution
@@ -235,7 +235,7 @@ namespace CSFundamentals.Concepts.StackQueues
             return stack.Count == 0 ? "YES" : "NO";
         }
 
-        public static string IsBalancedNoneStackSymetrical(string s)
+        public string IsBalancedNoneStackSymetrical(string s)
         {
             /*
              * Sample Input

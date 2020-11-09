@@ -7,7 +7,7 @@ namespace CSFundamentals.Concepts.Sorts
          * Resources: https://en.wikipedia.org/wiki/Insertion_sort
          *            
          */
-        public static void Sort<T>(T[] array) where T : IComparable
+        public void Sort<T>(T[] array) where T : IComparable
         {
             for (int i = 1; i < array.Length; i++)
             {
@@ -20,21 +20,21 @@ namespace CSFundamentals.Concepts.Sorts
             }
         }
 
-        public static void Swap<T>(T[] array, int first, int second)
+        public void Swap<T>(T[] array, int first, int second)
         {
             var current = array[first];
             array[first] = array[second];
             array[second] = current;
         }
 
-        public static void Display()
+        public void Display()
         {
             var integerValues = new int[] { -11, 12, -42, 0, 1, 90, 68, 6, -9 };
-            InsertionSort.Sort<int>(integerValues);
+            (new InsertionSort()).Sort<int>(integerValues);
             Console.WriteLine(string.Join(" | ", integerValues));
 
             var stringValues = new string[] { "Mary", "Marcin", "Ann", "James", "George", "Nicole" };
-            InsertionSort.Sort<string>(stringValues);
+            (new InsertionSort()).Sort<string>(stringValues);
             Console.WriteLine(string.Join(" | ", stringValues));
         }
     }

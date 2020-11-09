@@ -9,7 +9,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          * Link to the problem: https://www.hackerrank.com/challenges/simple-array-sum/problem
          */
 
-        public static int SimpleArraySumLong(int[] ar)
+        public int SimpleArraySumLong(int[] ar)
         {
             var sum = 0;
 
@@ -21,7 +21,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return sum;
         }
 
-        public static int SimpleArraySumUsingArraySum(int[] ar)
+        public int SimpleArraySumUsingArraySum(int[] ar)
         {
             return ar.Sum(); // This is the simple straight forwards approach but is using Linq
         }

@@ -80,7 +80,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          * Important link: https://docs.microsoft.com/en-us/dotnet/api/system.array.length?view=netcore-3.1
          */
 
-        public static int[][] MatrixSpiral(int n)
+        public int[][] MatrixSpiral(int n)
         {
             if (n <= 0) // If we don't have a valid number lets exit
             {
@@ -137,7 +137,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return returnMatrix;
         }
 
-        public static int[] SpiralArray(int[][] matrix)
+        public int[] SpiralArray(int[][] matrix)
         {
             // This is assuming that we have the same amount of columns for each row
             // It's important to note that this will work for jagged arrays but not for multidimentional arrays as Lenght will return the total of all of the elements
@@ -187,7 +187,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return returnIntArray;
         }
 
-        public static void TwoDSpiralArrayWorker()
+        public void TwoDSpiralArrayWorker()
         {
             var resultMatrix = MatrixSpiral(3);
             Console.WriteLine("Input: 3");

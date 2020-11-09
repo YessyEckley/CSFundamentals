@@ -23,7 +23,7 @@ namespace CSFundamentals.Concepts.TreesHeapsGraphs
          * IMPOTANT: Debug your code by talking out loud
          */
 
-        public static void QHeap1SolutionWorker()
+        public void QHeap1SolutionWorker()
         {
             var queries = int.Parse(Console.ReadLine());
             var sortedList = new SortedList();

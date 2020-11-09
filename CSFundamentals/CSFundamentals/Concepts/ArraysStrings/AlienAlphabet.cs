@@ -23,7 +23,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          */
 
         // TODO: COMPLETE EXERCISE
-        public static void AlienAlphabetWorker()
+        public void AlienAlphabetWorker()
         {
         }
     }

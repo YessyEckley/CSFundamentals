@@ -40,7 +40,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
         }
 
         // This wil traverse throught the charactes of an array vertically
-        private static string VerticalCharacterMutation(string[] stringArray, string maxString)
+        private string VerticalCharacterMutation(string[] stringArray, string maxString)
         {
             var newString = string.Empty;
             var nextCharIndex = 0;

@@ -5,12 +5,12 @@ namespace CSFundamentals.Concepts.Sorts
     {
         // QuickSort and MergeSort look very similar
 
-        public static void Sort<T>(T[] array) where T : IComparable
+        public void Sort<T>(T[] array) where T : IComparable
         {
             Sort(array, 0, array.Length - 1);
         }
 
-        public static T[] Sort<T>(T[] array, int lowerIndex, int upperIndex) where T : IComparable
+        public T[] Sort<T>(T[] array, int lowerIndex, int upperIndex) where T : IComparable
         {
             if (lowerIndex < upperIndex)
             {
@@ -22,7 +22,7 @@ namespace CSFundamentals.Concepts.Sorts
             return array;
         }
 
-        private static int Partition<T>(T[] array, int lowerIndex, int upperIndex) where T : IComparable
+        private int Partition<T>(T[] array, int lowerIndex, int upperIndex) where T : IComparable
         {
             var lower = lowerIndex;
             var upper = upperIndex;
@@ -54,7 +54,7 @@ namespace CSFundamentals.Concepts.Sorts
             return upper;
         }
 
-        private static void QuickSortUtil<T>(T[] array, int lowerIndex, int upperIndex) where T : IComparable
+        private void QuickSortUtil<T>(T[] array, int lowerIndex, int upperIndex) where T : IComparable
         {
             // Another interpretation of the Hoare partition scheme
             if (upperIndex <= lowerIndex)
@@ -90,7 +90,7 @@ namespace CSFundamentals.Concepts.Sorts
             QuickSortUtil(array, upperIndex + 1, stop);
         }
 
-        public static void Swap<T>(T[] array, int first, int second)
+        public void Swap<T>(T[] array, int first, int second)
         {
             var current = array[first];
             array[first] = array[second];
@@ -100,11 +100,11 @@ namespace CSFundamentals.Concepts.Sorts
         public void Display()
         {
             var integerValues = new int[] { -11, 12, -42, 0, 1, 90, 68, 6, -9 };
-            QuickSort.Sort<int>(integerValues);
+            (new QuickSort()).Sort<int>(integerValues);
             Console.WriteLine(string.Join(" | ", integerValues));
 
             var stringValues = new string[] { "Mary", "Marcin", "Ann", "James", "George", "Nicole" };
-            QuickSort.Sort<string>(stringValues);
+            (new QuickSort()).Sort<string>(stringValues);
             Console.WriteLine(string.Join(" | ", stringValues));
         }
     }

@@ -55,7 +55,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          * 
          */
 
-        public static void Swap(ref T aValue, ref T bValue)
+        public void Swap(ref T aValue, ref T bValue)
         {
             var temp = aValue;
 
@@ -64,7 +64,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             bValue = temp;
         }
 
-        public static List<T[]> Permutation(T[] a, int startIndex, int endIndex, List<T[]> returnList)
+        public List<T[]> Permutation(T[] a, int startIndex, int endIndex, List<T[]> returnList)
         {
             if(startIndex == endIndex)
             {
@@ -108,7 +108,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             }
         }
 
-        private static void SwapValues(int[] nums, int firstIndex, int secondIndex)
+        private void SwapValues(int[] nums, int firstIndex, int secondIndex)
         {
             var temp = nums[firstIndex];
             nums[firstIndex] = nums[secondIndex];

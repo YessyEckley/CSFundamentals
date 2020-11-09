@@ -21,7 +21,7 @@ namespace CSFundamentalsTests.Leetcode
         {
             var input = new string[] { "2", "3" };
             var expected = "6";
-            var actual = CSFundamentals.Leetcode.Problem43MultiplyStrings.Multiply(input[0], input[1]);
+            var actual = (new CSFundamentals.Leetcode.Problem43MultiplyStrings()).Multiply(input[0], input[1]);
             Assert.Equal(expected, actual);
         }
 
@@ -30,7 +30,7 @@ namespace CSFundamentalsTests.Leetcode
         {
             var input = new string[] { "4", "3" };
             var expected = "12";
-            var actual = CSFundamentals.Leetcode.Problem43MultiplyStrings.Multiply(input[0], input[1]);
+            var actual = (new CSFundamentals.Leetcode.Problem43MultiplyStrings()).Multiply(input[0], input[1]);
             Assert.Equal(expected, actual);
         }
 
@@ -39,7 +39,7 @@ namespace CSFundamentalsTests.Leetcode
         {
             var input = new string[] { "123", "456" };
             var expected = "56088";
-            var actual = CSFundamentals.Leetcode.Problem43MultiplyStrings.Multiply(input[0], input[1]);
+            var actual = (new CSFundamentals.Leetcode.Problem43MultiplyStrings()).Multiply(input[0], input[1]);
             Assert.Equal(expected, actual);
         }
     }
@@ -51,7 +51,7 @@ namespace CSFundamentalsTests.Leetcode
         {
             var input = "A man, a plan, a canal: Panama";
             var expected = true;
-            var actual = CSFundamentals.Leetcode.Problem125ValidPalindrome.IsPalindrome(input);
+            var actual = (new CSFundamentals.Leetcode.Problem125ValidPalindrome()).IsPalindrome(input);
             Assert.Equal(expected, actual);
         }
 
@@ -60,7 +60,7 @@ namespace CSFundamentalsTests.Leetcode
         {
             var input = "A man, a plan, a canal: Panama";
             var expected = true;
-            var actual = CSFundamentals.Leetcode.Problem125ValidPalindrome.IsPalindrome2(input);
+            var actual = (new CSFundamentals.Leetcode.Problem125ValidPalindrome()).IsPalindrome2(input);
             Assert.Equal(expected, actual);
         }
     }

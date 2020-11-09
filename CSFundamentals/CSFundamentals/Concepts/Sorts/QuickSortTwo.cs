@@ -13,7 +13,7 @@ namespace CSFundamentals.Concepts.Sorts
          * IMPORTANT: This sort uses the higher index to do the sorting, if we try to do the lower index it will break
          */
 
-        public static void QuickSort(int[] ar)
+        public void QuickSort(int[] ar)
         {
             if (ar.Length <= 1)
             {
@@ -24,7 +24,7 @@ namespace CSFundamentals.Concepts.Sorts
             Sort(ar, 0, ar.Length - 1);
         }
 
-        private static int[] Sort(int[] ar, int lowerIndex, int upperIndex)
+        private int[] Sort(int[] ar, int lowerIndex, int upperIndex)
         {
             if (lowerIndex < upperIndex)
             {
@@ -37,7 +37,7 @@ namespace CSFundamentals.Concepts.Sorts
             return ar;
         }
 
-        private static int Partition(int[] ar, int low, int high)
+        private int Partition(int[] ar, int low, int high)
         {
             var pivot = ar[high];
 

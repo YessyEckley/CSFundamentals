@@ -13,7 +13,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
          * [1 2 3 4 5] -> [5 1 2 3 4] -> [4 5 1 2 3] -> [3 4 5 1 2] -> [2 3 4 5 1]
          */
 
-        public static int[] RotRightLogic(int[] a, int d)
+        public int[] RotRightLogic(int[] a, int d)
         {
             for(var i = 0; i < d; i++)
             {
@@ -32,7 +32,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return a;
         }
 
-        public static int[] RotRightFasterLogic(int[] a, int d)
+        public int[] RotRightFasterLogic(int[] a, int d)
         {
             var newArray = new int[a.Count()];
             var newStartIndex = a.Count() - d;
@@ -53,7 +53,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return newArray;
         }
 
-        public static void LeftRotationWorker()
+        public void LeftRotationWorker()
         {
             Console.WriteLine("RightRotation: Enter two numbers separated by a space. First number -> size of the array. Second number -> number of rotations");
             string[] nd = Console.ReadLine().Split(' ');

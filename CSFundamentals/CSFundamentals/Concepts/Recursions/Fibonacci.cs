@@ -27,9 +27,9 @@ namespace CSFundamentals.Concepts.Recursions
          * We Can make this more efficient by storing the data in a array to save time and not have to call the Fib method all the time
          */
 
-        public static Dictionary<double, double> FibonacciSequence = new Dictionary<double, double>();
+        public Dictionary<double, double> FibonacciSequence = new Dictionary<double, double>();
 
-        public static double Fib(double n)
+        public double Fib(double n)
         {
             if (n == 0 || n == 1)
             {
@@ -39,7 +39,7 @@ namespace CSFundamentals.Concepts.Recursions
             return Fib(n - 1) + Fib(n - 2);
         }
 
-        public static double Fib2(double n)
+        public double Fib2(double n)
         {
             if (FibonacciSequence.ContainsKey(n))
             {

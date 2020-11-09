@@ -7,7 +7,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
         {
         }
 
-        public static int[] MoveAllZerosToEnd(int[] a)
+        public int[] MoveAllZerosToEnd(int[] a)
         {
             var backMovingIndex = a.Length - 1;
             var forwardMovingIndex = 0;
@@ -32,7 +32,7 @@ namespace CSFundamentals.Concepts.ArraysStrings
             return returnArray;
         }
 
-        public static int[] MoveAllZerosToBegining(int[] a)
+        public int[] MoveAllZerosToBegining(int[] a)
         {
             var backmovingIndex = a.Length - 1;
             var forwardMovingIndex = 0;

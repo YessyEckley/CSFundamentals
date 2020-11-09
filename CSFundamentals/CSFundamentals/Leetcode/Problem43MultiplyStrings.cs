@@ -9,7 +9,7 @@
          *            https://en.wikipedia.org/wiki/Multiplication_algorithm
          */
 
-        public static string Multiply(string num1, string num2)
+        public string Multiply(string num1, string num2)
         {
             /*
              * Good strategy is to not panic.

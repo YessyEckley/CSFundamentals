@@ -19,7 +19,7 @@ namespace CSFundamentalsTests.Concepts.StackQueues
             var testData = "{[()]}";
             var expected = "YES";
 
-            var actual = CSFundamentals.Concepts.StackQueues.BalancedBrackets.IsBalancedNoneStackSymetrical(testData);
+            var actual = (new CSFundamentals.Concepts.StackQueues.BalancedBrackets()).IsBalancedNoneStackSymetrical(testData);
 
             Assert.Equal(expected, actual);
         }
@@ -33,7 +33,7 @@ namespace CSFundamentalsTests.Concepts.StackQueues
             //This is when we find there is a flaw with this approach
             // -> it will not work with every balanced brackets
             // -> it will only work with symetrical string of brackets
-            var actual = CSFundamentals.Concepts.StackQueues.BalancedBrackets.IsBalancedNoneStackSymetrical     (testData);
+            var actual = (new CSFundamentals.Concepts.StackQueues.BalancedBrackets()).IsBalancedNoneStackSymetrical     (testData);
 
             //Assert.Equal(expected, actual); -> this
             Assert.Equal("NO", actual);
@@ -45,7 +45,7 @@ namespace CSFundamentalsTests.Concepts.StackQueues
             var testData = "{(([])[])[]}[]";
             var expected = "YES";
 
-            var actual = CSFundamentals.Concepts.StackQueues.BalancedBrackets.IsBalanced(testData);
+            var actual = (new CSFundamentals.Concepts.StackQueues.BalancedBrackets()).IsBalanced(testData);
 
             Assert.Equal(expected, actual);
         }
@@ -56,7 +56,7 @@ namespace CSFundamentalsTests.Concepts.StackQueues
             var testData = "{(([])[])[]]}";
             var expected = "NO";
 
-            var actual = CSFundamentals.Concepts.StackQueues.BalancedBrackets.IsBalanced(testData);
+            var actual = (new CSFundamentals.Concepts.StackQueues.BalancedBrackets()).IsBalanced(testData);
 
             Assert.Equal(expected, actual);
         }

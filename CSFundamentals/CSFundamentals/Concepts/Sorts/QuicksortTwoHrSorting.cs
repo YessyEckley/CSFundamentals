@@ -25,7 +25,7 @@ namespace CSFundamentals.Concepts.Sorts
          * IMPORTANT:
          */
 
-        public static void QuickSort(int[] ar)
+        public void QuickSort(int[] ar)
         {
             if (ar.Length < 2)
             {
@@ -35,7 +35,7 @@ namespace CSFundamentals.Concepts.Sorts
             Sort(ar, 0, ar.Length - 1);
         }
 
-        private static void Sort(int[] ar, int lowerIndex, int upperIndex)
+        private void Sort(int[] ar, int lowerIndex, int upperIndex)
         {
             if (lowerIndex >= upperIndex)
             {
@@ -51,7 +51,7 @@ namespace CSFundamentals.Concepts.Sorts
         }
 
 
-        private static void PrintArray(int[] ar, int lowerIndex, int upperIndex)
+        private void PrintArray(int[] ar, int lowerIndex, int upperIndex)
         {
             for (int i = lowerIndex; i <= upperIndex; i++)
             {
@@ -62,7 +62,7 @@ namespace CSFundamentals.Concepts.Sorts
         }
 
 
-        private static int Partition(int[] ar, int lowerIndex, int upperIndex)
+        private int Partition(int[] ar, int lowerIndex, int upperIndex)
         {
             var pivot = ar[lowerIndex];
             var leftList = new List<int>();
@@ -92,7 +92,7 @@ namespace CSFundamentals.Concepts.Sorts
         }
 
 
-        private static void Copy(List<int> list, int[] ar, int lowerIndex)
+        private void Copy(List<int> list, int[] ar, int lowerIndex)
         {
             foreach (var element in list)
             {

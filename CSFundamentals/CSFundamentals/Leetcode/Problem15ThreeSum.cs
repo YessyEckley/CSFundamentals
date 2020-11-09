@@ -17,7 +17,7 @@ namespace CSFundamentals.Leetcode
          */
 
         // Pointer approach
-        public static IList<IList<int>> ThreeSum(int[] nums)
+        public IList<IList<int>> ThreeSum(int[] nums)
         {
             Array.Sort(nums);
 
@@ -35,7 +35,7 @@ namespace CSFundamentals.Leetcode
         }
 
         // Pointer approach #2
-        private static void TwoSumII(int[] nums, int i, IList<IList<int>> returnValue)
+        private void TwoSumII(int[] nums, int i, IList<IList<int>> returnValue)
         {
             var low = i + 1;
             var hi = nums.Length - 1;
@@ -66,7 +66,7 @@ namespace CSFundamentals.Leetcode
         }
 
         // Approach #2 -> This one gets less test cases to pass
-        public static IList<IList<int>> ThreeSum2(int[] nums)
+        public IList<IList<int>> ThreeSum2(int[] nums)
         {
             Array.Sort(nums);
 
@@ -83,7 +83,7 @@ namespace CSFundamentals.Leetcode
             return returnValue;
         }
 
-        private static void TwoSum(int[] nums, int i, IList<IList<int>> returnValue)
+        private void TwoSum(int[] nums, int i, IList<IList<int>> returnValue)
         {
             var values = new Dictionary<int, int>();
 
@@ -105,7 +105,7 @@ namespace CSFundamentals.Leetcode
         }
 
         // Approach #3 -> This uses the algorithm from the wikipedia article
-        public static IList<IList<int>> ThreeSum3(int[] nums)
+        public IList<IList<int>> ThreeSum3(int[] nums)
         {
             Array.Sort(nums);
 

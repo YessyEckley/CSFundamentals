@@ -16,9 +16,9 @@ namespace CSFundamentals.Concepts.Recursions
          * IMPOTANT: Debug your code by talking out loud
          */
 
-        public static Dictionary<double, double> FactorialSequence = new Dictionary<double, double>();
+        public Dictionary<double, double> FactorialSequence = new Dictionary<double, double>();
 
-        public static double Fact(double n)
+        public double Fact(double n)
         {
             if (FactorialSequence.ContainsKey(n))
             {

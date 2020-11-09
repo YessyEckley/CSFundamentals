@@ -8,8 +8,10 @@ namespace CSFundamentals
 {
     class Program
     {
-        static void Main(string[] args)
+       static void Main(string[] args)
         {
+            // TODO: We are going to stop using static as it will mess up with some tests
+
             //Concepts.Sorts.InsertionSort.Display();
             //Concepts.Sorts.QuicksortTwoHrSorting.QuickSort(new int[] { 5, 8, 1, 3, 7, 9, 2 });
             //Concepts.BfsDfs.BfsShortestReach.Worker();
