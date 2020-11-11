@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace CSFundamentals.Leetcode
 {
@@ -53,6 +54,29 @@ namespace CSFundamentals.Leetcode
             {
                 LetterCombination(nextDigits.Substring(1), combination + letter, values);
             }
+        }
+    }
+
+    public partial class Problem1428LeftmostWithAtleastOne
+    {
+        /*
+         * Leetcode problem: https://leetcode.com/problems/leftmost-column-with-at-least-a-one/
+         * For more solutions: https://leetcode.com/problems/leftmost-column-with-at-least-a-one/solution/
+         */
+
+        class BinaryMatrix
+        {
+            // In Leetcode this is already implemented  but we are bring it as a dummy just to be able to use the object and it's functions
+            // This is from Leetcode's comments
+            // This is BinaryMatrix's API interface.
+            // You should not implement it, or speculate about its implementation
+            public int Get(int row, int col) { return 0; }
+            public IList<int> Dimensions() { return new List<int>(); }
+        }
+
+        public int LeftMostColumnWithOne(BinaryMatrix binaryMatrix)
+        {
+
         }
     }
 }
