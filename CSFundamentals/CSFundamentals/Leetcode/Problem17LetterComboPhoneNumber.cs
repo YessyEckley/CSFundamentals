@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace CSFundamentals.Leetcode
 {
@@ -57,26 +56,20 @@ namespace CSFundamentals.Leetcode
         }
     }
 
-    public partial class Problem1428LeftmostWithAtleastOne
+    public class Problem76MinimumWindowSubstring
     {
         /*
-         * Leetcode problem: https://leetcode.com/problems/leftmost-column-with-at-least-a-one/
-         * For more solutions: https://leetcode.com/problems/leftmost-column-with-at-least-a-one/solution/
+         * Leetcode problem: https://leetcode.com/problems/minimum-window-substring/
+         * For more solutions: https://leetcode.com/problems/minimum-window-substring/solution/
+         * 
+         * This can provide some help: https://www.geeksforgeeks.org/window-sliding-technique/
          */
 
-        class BinaryMatrix
+        public string MinWindow(string s, string t)
         {
-            // In Leetcode this is already implemented  but we are bring it as a dummy just to be able to use the object and it's functions
-            // This is from Leetcode's comments
-            // This is BinaryMatrix's API interface.
-            // You should not implement it, or speculate about its implementation
-            public int Get(int row, int col) { return 0; }
-            public IList<int> Dimensions() { return new List<int>(); }
-        }
+            var result = "";
 
-        public int LeftMostColumnWithOne(BinaryMatrix binaryMatrix)
-        {
-
+            return result;
         }
     }
 }

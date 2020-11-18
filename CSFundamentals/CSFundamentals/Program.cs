@@ -17,7 +17,7 @@ namespace CSFundamentals
             //Concepts.BfsDfs.BfsShortestReach.Worker();
             //Console.WriteLine(Leetcode.Problem8Atoi.MyAtoi("3.145678"));
 
-            // Leetcode class teplate
+            // Leetcode class template
             //public class Problem
             //{
             //    /*
@@ -25,6 +25,12 @@ namespace CSFundamentals
             //     * For more solutions: 
             //     */
             //}
+
+            //https://leetcode.com/problems/continuous-subarray-sum/
+            //https://leetcode.com/problems/subarray-product-less-than-k/
+            //https://leetcode.com/problems/find-pivot-index/
+            //https://leetcode.com/problems/subarray-sums-divisible-by-k/
+            //https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/
 
         }
     }
