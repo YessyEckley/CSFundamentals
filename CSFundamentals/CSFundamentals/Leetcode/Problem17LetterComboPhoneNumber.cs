@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace CSFundamentals.Leetcode
 {
@@ -53,23 +54,6 @@ namespace CSFundamentals.Leetcode
             {
                 LetterCombination(nextDigits.Substring(1), combination + letter, values);
             }
-        }
-    }
-
-    public class Problem76MinimumWindowSubstring
-    {
-        /*
-         * Leetcode problem: https://leetcode.com/problems/minimum-window-substring/
-         * For more solutions: https://leetcode.com/problems/minimum-window-substring/solution/
-         * 
-         * This can provide some help: https://www.geeksforgeeks.org/window-sliding-technique/
-         */
-
-        public string MinWindow(string s, string t)
-        {
-            var result = "";
-
-            return result;
         }
     }
 }
