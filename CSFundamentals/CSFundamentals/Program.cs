@@ -10,6 +10,16 @@ namespace CSFundamentals
     {
        static void Main(string[] args)
         {
+            //Console.WriteLine(Concepts.Algorithms.BitapAlgorithm.BitapSearch("The quick brown fox jumps over the lazy dog", "fox"));
+
+            //Console.WriteLine(Concepts.Algorithms.BitapAlgorithm.GetSearchRank("The quick brown fox jumps over the lazy dog", "fox", 50));
+            //Console.WriteLine(Concepts.Algorithms.BitapAlgorithm.GetSearchRank("The quick brown fox jumps over the lazy dog", "the", 50));
+
+            Console.WriteLine(Concepts.Algorithms.BitapAlgorithm.BitapSearch("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", "eu"));
+            Console.WriteLine(Concepts.Algorithms.BitapAlgorithm.GetSearchRankScore("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.", "eu", 500));
+
+            Console.ReadLine();
+
             // TODO: We are going to stop using static as it will mess up with some tests
 
             //Concepts.Sorts.InsertionSort.Display();
@@ -115,6 +125,8 @@ namespace CSFundamentals
  * https://en.wikibooks.org/wiki/Algorithm_Implementation
  * 
  * https://www.techiedelight.com/get-subarray-of-array-csharp/
+ * 
+ * https://www.programmingalgorithms.com
  * 
  * We will not write here to proof concepts, we will use test for that
  * 

@@ -102,11 +102,11 @@ namespace CSFundamentals.Leetcode
 
                             switch (ipv4[i])
                             {
-                                case string when !ipv4ParseSuccess:
-                                case string when ipv4[i].Length < 1:
-                                case string when ipv4[i].StartsWith("0") && ipv4[i].Length > 1:
-                                case string when intIp < 0:
-                                case string when intIp > 255:
+                                case string _ when !ipv4ParseSuccess:
+                                case string _ when ipv4[i].Length < 1:
+                                case string _ when ipv4[i].StartsWith("0") && ipv4[i].Length > 1:
+                                case string _ when intIp < 0:
+                                case string _ when intIp > 255:
                                     return "Neither";
                                 default:
                                     break;
