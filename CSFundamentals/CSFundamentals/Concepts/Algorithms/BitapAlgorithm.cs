@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-
-namespace CSFundamentals.Concepts.Algorithms
+﻿namespace CSFundamentals.Concepts.Algorithms
 {
     public class BitapAlgorithm
     {
